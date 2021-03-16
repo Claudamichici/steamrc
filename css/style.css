@@ -21,3 +21,11 @@ main{
 {
     width: 100%;
 }
+
+.fondoAdmin{
+    background-color: #173850;
+}
+
+.botonAgregar{
+    margin-left: 1000px;
+}

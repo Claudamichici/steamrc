@@ -75,7 +75,7 @@
                     <h3 class="text-center text-light mb-5 my-5">Administracion de juegos</h3>
                 </div>
                 <div class="botonAgregar">
-                    <button class="btn btn-outline-light" id='btnAgregar' data-bs-toggle="modal" data-bs-target="#exampleModal" >Agregar</button>
+                    <button class="btn btn-success w-25" id='btnAgregar' data-bs-toggle="modal" data-bs-target="#modalJuegos">Agregar</button>
                 </div>
             <div class="table-responsive">
             <table class="table table-striped">
@@ -95,6 +95,59 @@
             </div>
         </section>
       </main>
+      <div class="modal" tabindex="-1" id="modalJuegos" onsubmit="">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Administracion de juegos</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="formJuegos">
+                <div class="mb-3">
+                    <label class="label-control mb-2">Codigo</label>
+                    <input type="number" id="codigo" class="form-control" placeholder="1" required>
+                    <div class="invalid-feedback">
+                        Debe ingresar un codigo correcto.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="label-control mb-2">Nombre de juego</label>
+                    <input type="name" id="nombreDeJuego" class="form-control" placeholder="Rocket League">
+                    <div class="invalid-feedback">
+                        Debe ingresar un nombre de juego correcto.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="label-control mb-2">Categoria</label>
+                    <select name="" id="categoria" class="form-control" placeholder="">
+                        <option></option>
+                        <option>Acción</option>
+                        <option>Aventura</option>
+                        <option>Deportes</option>
+                        <option>Carreras</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Debe ingresar una categoria correcta.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="label-control mb-2">Descripción</label>
+                    <textarea row="3" class="form-control" id="descripcion"></textarea>
+                    <div class="invalid-feedback">
+                        Debe ingresar una descripcion correcta.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="mb-2">Imagen</label>
+                    <input type="text" class="form-control" placeholder="agregar una imagen">
+                </div>
+                <button type="button" class="btn btn-success w-100" type="submit">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
       <footer class="container-fluid text-dark pt-3">
         <section class="row align-items-center text-center">
             <article class="col-sm-12 col-md-4">

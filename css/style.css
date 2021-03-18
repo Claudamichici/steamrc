@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-main {
+body{
     margin-top: 110px;
     min-height: 100vh;
     background: rgb(25, 64, 90);
@@ -20,4 +20,8 @@ footer {
 
 .botonAgregar{
     margin-left: 1000px;
+}
+
+.infocontacto{
+    margin-top: 130px;
 }

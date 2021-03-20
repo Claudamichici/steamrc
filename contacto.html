@@ -16,6 +16,13 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
     <title>Steam</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript">
+        (function() {
+        emailjs.init("user_vLdnnrwRLmZCdL5WgsMjT");
+        })();
+        </script>
 </head>
 
 <body>
@@ -93,24 +100,27 @@
                 <section class="col-sm-12 col-md-8 my-5">
                     <article class="ms-3">
                         <h1>02/ Envianos un mensaje</h1>
-                        <form>
+                        <form onsubmit="validarGeneral(event)" id="formConsulta">
                             <div class="mb-3">
                                 <label class="form-label">Nombre y Apellido*</label>
-                                <input type="text" placeholder="Juan Perez" class="form-control" id="nombre">
+                                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez"
+                                    onblur="campoRequerido(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un nombre y apellido válido
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Teléfono*</label>
-                                <input type="number" placeholder="38101234567" class="form-control" id="telefono">
+                                <input type="number" class="form-control" id="telefono" placeholder="38101234567"
+                                    onblur="validarNumeros(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un número teléfono
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email*</label>
-                                <input type="email" placeholder="juanperez@gmail.com" class="form-control" id="email">
+                                <input type="email" placeholder="juanperez@gmail.com" class="form-control" id='email'
+                                    onblur="validarEmail(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un mail válido
                                 </div>
@@ -118,18 +128,23 @@
                             <div class="mb-3">
                                 <label class="form-label">¿Cómo podemos ayudarte?*</label>
                                 <textarea placeholder="Ingrese su consulta aqui" rows="5" class="form-control"
-                                    id="email"></textarea>
+                                    id="consulta" onblur="validarConsulta(this)" required></textarea>
                                 <div class="invalid-feedback">
                                     Debe ingresar una consulta de al menos 15 caracteres
                                 </div>
                             </div>
                             <div class="my-3">
+                                <a href="https://store.steampowered.com/privacy_agreement/?snr=1_44_44_">Términos y
+                                    condiciones</a>
+                            </div>
+                            <div class="my-3">
                                 <div class="form-check">
-                                  <input type="checkbox" id="terminos" class="form-check-input" />
-                                  <label class="form-check-label">Estoy de acuerdo con los términos y condiciones</label>
-                                  <div class="invalid-feedback">
-                                    Debe aceptar los términos y condiciones
-                                  </div>
+                                    <input type="checkbox" id="terminos" class="form-check-input">
+                                    <label class="form-check-label">Está de acuerdo con los términos y
+                                        condiciones</label>
+                                    <div class="invalid-feedback">
+                                        Debe aceptar términos y condiciones
+                                    </div>
                                 </div>
                             </div>
                             <button class="btn btn-success" type="submit">Enviar</button>

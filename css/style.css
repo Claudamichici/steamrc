@@ -145,3 +145,17 @@ footer {
         width: 48%;
     }
 }
+
+@media (max-width: 768px) {
+    .fuenteDetalleLarge {
+        font-size: 110%;
+    }
+    .fuenteDetalleSmall2 {
+        font-size: 70%;
+    }
+    .plataformaCompra {
+        margin-left: 45%;
+        width: 48%;
+        font-size: 70%;
+    }
+}

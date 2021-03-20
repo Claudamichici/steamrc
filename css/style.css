@@ -103,4 +103,45 @@ footer {
 
 .plataformaCompra {
     background: #0a141d;
+    width: 25%;
+    margin-left: 70%;
+    border-radius: 3px;
+}
+
+.fondoTabla {
+    background: #112e41;
+}
+
+.textos {
+    text-align: justify;
+}
+
+.plataformaContrato {
+    background: rgb(78, 74, 63);
+    background: linear-gradient(90deg, rgba(78, 74, 63, 1) 4%, rgba(114, 104, 80, 1) 74%);
+    color: #e1c48a;
+}
+
+@media (max-width: 1400px) and (min-width: 1200px) {
+    .plataformaCompra {
+        margin-left: 65%;
+        width: 30%;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .plataformaCompra {
+        margin-left: 60%;
+        width: 35%;
+    }
+}
+
+@media (max-width: 992px) {
+    .fuenteDetalleLarge {
+        font-size: 140%;
+    }
+    .plataformaCompra {
+        margin-left: 45%;
+        width: 48%;
+    }
 }

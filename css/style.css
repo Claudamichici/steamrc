@@ -45,7 +45,7 @@ footer {
     margin-left: 70px;
 }
 
-.fuenteDetalle {
+.fuenteDetalleSmall {
     font-size: 87%;
 }
 
@@ -69,4 +69,38 @@ footer {
 .textLink:hover {
     text-decoration: none;
     color: #f5f5f5;
+}
+
+.fuenteDetalleLarge {
+    font-size: 170%;
+    font-weight: bold;
+}
+
+.bg-card {
+    background: rgb(43, 59, 74);
+    background: linear-gradient(90deg, rgba(43, 59, 74, 1) 0%, rgba(86, 100, 115, 1) 91%);
+    height: 60px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.boton-comprar {
+    background: rgb(117, 176, 34);
+    background: linear-gradient(90deg, rgba(117, 176, 34, 1) 0%, rgba(88, 138, 27, 1) 69%);
+    color: #d2efa9;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.boton-comprar:hover {
+    background: rgb(152, 229, 43);
+    background: linear-gradient(90deg, rgba(152, 229, 43, 1) 0%, rgba(122, 192, 36, 1) 69%);
+    color: white;
+    font-weight: bold;
+}
+
+.plataformaCompra {
+    background: #0a141d;
 }

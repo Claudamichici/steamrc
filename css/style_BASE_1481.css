@@ -1,0 +1,23 @@
+.lista{
+    list-style: none;
+    padding: 0;
+}
+
+main{
+    margin-top: 110px;
+    min-height: 100vh;
+}
+
+#div-img
+{
+    background-image: url(../img/forzahorizon4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 50vh;
+}
+
+#div-img > img
+{
+    width: 100%;
+}

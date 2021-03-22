@@ -8,7 +8,7 @@
     padding: 0;
 }
 
-body {
+.body {
     margin-top: 110px;
     min-height: 100vh;
     background: rgb(25, 64, 90);

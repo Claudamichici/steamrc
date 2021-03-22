@@ -42,12 +42,12 @@
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#modalSuscribirse" class="btn btn-light my-2" data-toggle="modal"><i class="far fa-bell fa-x"></i>
-                                <div>Suscripción</div>
+                            <a class="nav-link" href="#modalRegistro" class="btn btn-light my-2" data-bs-toggle="modal" data-bs-target="#registromodal"><i class="far fa-bell fa-x"></i>
+                                <div>Registro</div>
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#"><i class="fas fa-sign-in-alt fa-x"></i>
+                            <a class="nav-link" href="#modalIngresar" data-bs-toggle="modal" data-bs-target="#loginmodal"><i class="fas fa-sign-in-alt fa-x"></i>
                                 <div>Ingresar</div>
                             </a>
                         </li>
@@ -70,8 +70,8 @@
                         <p class="fuenteDetalleSmall fuenteDetalleColor3"><a href="index.html" class="textLink">Todos los juegos</a> > <a href="index.html" class="textLink">Carreras</a> > <a href="detalles.html" class="textLink">Forza Horizon 4</a></p>
                     </div>
                     <h1 class="text-light"><b>Forza Horizon 4</b></h1>
-                    <div class="row bg-destacado p-2">
-                        <div class="col-md-8 rounded-start p-1">
+                    <div class="row intro p-2">
+                        <div class="col-lg-8 rounded-start p-1">
                             <div>
                                 <article>
                                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
@@ -98,10 +98,11 @@
                                 </article>
                             </div>
                         </div>
-                        <div class="col-md-4 col-sm-0 rounded-end row p-1 text-light ms-1">
+                        <div class="col-lg-4 rounded-end row p-1 text-light ms-1">
                             <div>
-                                <iframe width="350" height="200" src="https://www.youtube.com/embed/RCRYs7yfeo4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="mt-2">
+                                <!--width="350" height="200"-->
+                                <iframe class="video" src="https://www.youtube.com/embed/RCRYs7yfeo4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <div class="mt-2 fuenteDetalleSmall2">
                                     <p class="fuenteDetalleSmall">Las estaciones dinámicas lo cambian todo en el mejor festival automovilístico del mundo. Ve por cuenta propia o únete a otros equipos para explorar la hermosa e histórica Gran Bretaña en un mundo abierto compartido.</p>
                                     <div class="row mt-2">
                                         <div class="col-6">
@@ -131,17 +132,118 @@
                 </article>
             </section>
             <!--Carousel de imágenes y videos + descripción y detalles del producto: Fin-->
+            <!-- Modal 1 -->
+            <!-- Modal -->
+            <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-modal p-4">
+                        <div class="text-light d-flex flex-column">
+                            <div>
+                                <img src="img/logo_steam.svg" alt="Logo steam" class="w-25">
+                                <h4 class="text-center">Registro</h4>
+                                <hr class="hrs">
+                            </div>
+                            <div class="modal-body text-light">
+                                <form class="px-4 py-3">
+                                    <div class="mb-3">
+                                        <label for="exampleDropdownFormEmail1" class="form-label">Correo</label>
+                                        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="Correo@ejemplo.com">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleDropdownFormEmail1" class="form-label">Usuario</label>
+                                        <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleDropdownFormPassword1" class="form-label">Contrasña</label>
+                                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña">
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                            <label class="form-check-label" for="dropdownCheck">
+                                                ¿Estas deacuerdo con nuestras condiciones de uso ?
+                                                </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Registrate</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="d-flex">
+                                    <div>
+                                        <img src="img/footerLogo_valve_new.png" alt="Logo-de-valve" class="w-100">
+                                    </div>
+                                    <p>© 2021 Valve Corporation. Todos los derechos reservados. Todos los precios incluyen IVA (donde sea aplicable).</p>
+                                </div>
+                                <div class="d-flex align-items-end justify-content-end">
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 2 -->
+            <!-- Modal -->
+            <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-modal p-4">
+                        <div class="text-light d-flex flex-column">
+                            <div>
+                                <img src="img/logo_steam.svg" alt="Logo steam" class="w-25">
+                                <h4 class="text-center">Ingreso</h4>
+                                <hr class="hrs">
+                            </div>
+                            <div class="modal-body text-light">
+                                <form class="px-4 py-3">
+                                    <div class="mb-3">
+                                        <label for="exampleDropdownFormEmail1" class="form-label">Usuario</label>
+                                        <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleDropdownFormPassword1" class="form-label">Contrasña</label>
+                                        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña">
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                            <label class="form-check-label" for="dropdownCheck">
+                                                Recuerdame
+                                                </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Ingresar</button>
+                                </form>
+                                <hr class="hrs">
+                                <a class="dropdown-item text-light" href="#">¡Registrate!</a>
+                                <a class="dropdown-item text-light" href="#">¿Olvidaste tu contraseña?</a>
+                            </div>
+                            <div class="modal-footer">
+                                <div class="d-flex">
+                                    <div>
+                                        <img src="img/footerLogo_valve_new.png" alt="Logo-de-valve" class="w-100">
+                                    </div>
+                                    <p>© 2021 Valve Corporation. Todos los derechos reservados. Todos los precios incluyen IVA (donde sea aplicable).</p>
+                                </div>
+                                <div class="d-flex align-items-end justify-content-end">
+                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin de modal -->
         </section>
         <!--Descripción y botones de compra-->
         <section class="container">
             <article class="row text-light">
-                <div class="bg-card col-9">
+                <div class="bg-card col-lg-9">
                     <span class="fuenteDetalleLarge">Comprar Forza Horizon 4: Edición Estandar</span>
                     <div class="plataformaCompra py-1 px-1">
                         <span class="fuenteDetalleSmall">ARS$ <i>No disponible </i><button class="boton-comprar">Añadir al carro</button></span>
                     </div>
                 </div>
-                <div class="col-9 mt-5 container fuenteDetalleSmall2">
+                <div class="col-lg-9 mt-5 container fuenteDetalleSmall2">
                     <h4>Acerca de este juego</h4>
                     <hr>
                     <p class="textos">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam cumque, rerum veritatis magnam libero voluptatem ut sunt dolorem voluptate quos doloremque, ipsam maxime earum. Repudiandae odit corrupti eos placeat soluta minus quibusdam
@@ -151,7 +253,7 @@
                         Quia rerum atque obcaecati ipsa minima doloremque repellat dignissimos natus! Odio omnis aspernatur aliquam ab alias placeat. Dolorum animi voluptatum, voluptatibus alias voluptates quam. Quaerat debitis iste aut fugiat dicta animi.
                     </p>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3">
                     <div class="container bg-gradient py-3">
                         <table class="table text-light table-bordered border-dark fuenteDetalleSmall">
                             <thead>

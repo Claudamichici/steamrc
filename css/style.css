@@ -103,7 +103,7 @@ footer {
 
 .plataformaCompra {
     background: #0a141d;
-    width: 25%;
+    width: max-content;
     margin-left: 70%;
     border-radius: 3px;
 }
@@ -122,17 +122,33 @@ footer {
     color: #e1c48a;
 }
 
+.bg-modal {
+    background: rgb(34, 34, 34);
+    background: linear-gradient(90deg, rgba(34, 34, 34, 0.5410539215686274) 0%, rgba(31, 31, 31, 1) 35%, rgba(22, 22, 22, 1) 100%);
+}
+
+.video {
+    width: 100%;
+    height: 45%;
+}
+
+.intro {
+    background-color: #0a141d;
+    height: 510px;
+}
+
 @media (max-width: 1400px) and (min-width: 1200px) {
     .plataformaCompra {
         margin-left: 65%;
-        width: 30%;
     }
 }
 
 @media (max-width: 1200px) and (min-width: 992px) {
     .plataformaCompra {
         margin-left: 60%;
-        width: 35%;
+    }
+    .intro {
+        height: 540px;
     }
 }
 
@@ -141,12 +157,18 @@ footer {
         font-size: 140%;
     }
     .plataformaCompra {
-        margin-left: 45%;
-        width: 48%;
+        margin-left: 60%;
+    }
+    .contenedorFlexible {
+        display: flex;
+        flex-direction: column;
+    }
+    .intro {
+        height: 800px;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
     .fuenteDetalleLarge {
         font-size: 110%;
     }
@@ -154,8 +176,17 @@ footer {
         font-size: 70%;
     }
     .plataformaCompra {
-        margin-left: 45%;
-        width: 48%;
+        margin-left: 60%;
+        font-size: 70%;
+    }
+    .intro {
+        height: 620px;
+    }
+}
+
+@media (max-width: 520px) {
+    .plataformaCompra {
+        margin-left: 5%;
         font-size: 70%;
     }
 }

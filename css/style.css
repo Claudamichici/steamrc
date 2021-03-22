@@ -11,6 +11,9 @@
 body {
     margin-top: 110px;
     min-height: 100vh;
+}
+
+.body {
     background: rgb(25, 64, 90);
     background: linear-gradient(180deg, rgba(25, 64, 90, 1) 0%, rgba(14, 38, 54, 1) 49%, rgba(14, 38, 54, 1) 100%);
 }
@@ -45,7 +48,7 @@ footer {
     margin-left: 70px;
 }
 
-.fuenteDetalle {
+.fuenteDetalleSmall {
     font-size: 87%;
 }
 
@@ -69,6 +72,57 @@ footer {
 .textLink:hover {
     text-decoration: none;
     color: #f5f5f5;
+}
+
+.fuenteDetalleLarge {
+    font-size: 170%;
+    font-weight: bold;
+}
+
+.bg-card {
+    background: rgb(43, 59, 74);
+    background: linear-gradient(90deg, rgba(43, 59, 74, 1) 0%, rgba(86, 100, 115, 1) 91%);
+    height: 60px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.boton-comprar {
+    background: rgb(117, 176, 34);
+    background: linear-gradient(90deg, rgba(117, 176, 34, 1) 0%, rgba(88, 138, 27, 1) 69%);
+    color: #d2efa9;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.boton-comprar:hover {
+    background: rgb(152, 229, 43);
+    background: linear-gradient(90deg, rgba(152, 229, 43, 1) 0%, rgba(122, 192, 36, 1) 69%);
+    color: white;
+    font-weight: bold;
+}
+
+.plataformaCompra {
+    background: #0a141d;
+    width: max-content;
+    margin-left: 70%;
+    border-radius: 3px;
+}
+
+.fondoTabla {
+    background: #112e41;
+}
+
+.textos {
+    text-align: justify;
+}
+
+.plataformaContrato {
+    background: rgb(78, 74, 63);
+    background: linear-gradient(90deg, rgba(78, 74, 63, 1) 4%, rgba(114, 104, 80, 1) 74%);
+    color: #e1c48a;
 }
 
 .bg-modal {
@@ -99,4 +153,67 @@ footer {
 
 .fotopers{
     border-radius: 50%;
+}
+.video {
+    width: 100%;
+    height: 45%;
+}
+
+.intro {
+    background-color: #0a141d;
+    height: 510px;
+}
+
+@media (max-width: 1400px) and (min-width: 1200px) {
+    .plataformaCompra {
+        margin-left: 65%;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .plataformaCompra {
+        margin-left: 60%;
+    }
+    .intro {
+        height: 540px;
+    }
+}
+
+@media (max-width: 992px) {
+    .fuenteDetalleLarge {
+        font-size: 140%;
+    }
+    .plataformaCompra {
+        margin-left: 60%;
+    }
+    .contenedorFlexible {
+        display: flex;
+        flex-direction: column;
+    }
+    .intro {
+        height: 800px;
+    }
+}
+
+@media (max-width: 769px) {
+    .fuenteDetalleLarge {
+        font-size: 110%;
+    }
+    .fuenteDetalleSmall2 {
+        font-size: 70%;
+    }
+    .plataformaCompra {
+        margin-left: 60%;
+        font-size: 70%;
+    }
+    .intro {
+        height: 620px;
+    }
+}
+
+@media (max-width: 520px) {
+    .plataformaCompra {
+        margin-left: 5%;
+        font-size: 70%;
+    }
 }

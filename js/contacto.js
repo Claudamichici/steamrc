@@ -101,3 +101,32 @@ function limpiarForm() {
     consulta.className = 'form-control';
     terminos.className = 'form-check-input'
 }
+
+function validarUsuario (usuario) {
+    if (usuario.value.trim() != "" && usuario.value.length >= 6 && usuario.value.length < 16) {
+        usuario.className = 'form-control is-valid';
+        return true;
+    } else {
+        usuario.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+function validarContraseña(contraseña) {
+    if (contraseña.value.trim() != "" && contraseña.value.length >= 8 && contraseña.value.length <16) {
+        contraseña.className = 'form-control is-valid';
+        return true;
+    } else {
+        contraseña.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+function validarReg(event){
+    event.preventDefault();
+    if (validarEmail(document.getElementById('email')) && validarUsuario(document.getElementById('usuario')) && validarContraseña(document.getElementById('contraseña'))) {
+        enviarEmail();
+    } else {
+        alert('datos incorrectos');
+    }
+}

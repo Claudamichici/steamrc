@@ -1,1 +1,1 @@
-import {validarCodigo, validarNombreJuego, validarCategoria} from './validaciones.js'
+import {validarCodigo, validarNombreJuego, validarCategoria, validarDescripcion, validarPrecio, validarUrl } from './validaciones.js'

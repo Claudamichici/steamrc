@@ -130,30 +130,34 @@ footer {
     background: linear-gradient(90deg, rgba(34, 34, 34, 0.5410539215686274) 0%, rgba(31, 31, 31, 1) 35%, rgba(22, 22, 22, 1) 100%);
 }
 
-.pers1{
+.pers1 {
     margin: 40px;
     background-color: #00DBDE;
     background-image: linear-gradient(90deg, #00DBDE 0%, #171a21 73%);
 }
-.pers2{
+
+.pers2 {
     margin: 40px;
     background-color: #171a21;
     background-image: linear-gradient(90deg, #171a21 28%, #00DBDE 73%);
 }
-.pers3{
+
+.pers3 {
     margin: 40px;
     background-color: #00DBDE;
-    background-image: linear-gradient(90deg, #00DBDE 0%, #171a21 73%);    
+    background-image: linear-gradient(90deg, #00DBDE 0%, #171a21 73%);
 }
-.pers4{
+
+.pers4 {
     margin: 40px;
-    background-color: #171a21;  
+    background-color: #171a21;
     background-image: linear-gradient(90deg, #171a21 28%, #00DBDE 73%);
 }
 
-.fotopers{
+.fotopers {
     border-radius: 50%;
 }
+
 .video {
     width: 100%;
     height: 45%;
@@ -162,6 +166,15 @@ footer {
 .intro {
     background-color: #0a141d;
     height: 510px;
+}
+
+.contenedor404 {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6951914554884453) 0%, rgba(0, 0, 0, 0.8436508392419468) 76%);
+}
+
+.gordon {
+    position: relative;
 }
 
 @media (max-width: 1400px) and (min-width: 1200px) {

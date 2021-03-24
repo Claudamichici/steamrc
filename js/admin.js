@@ -4,6 +4,9 @@ import { validarCodigo, validarNombreJuego, validarCategoria, validarDescripcion
 let listaJuegos = [];
 
 const modalJuegos = new bootstrap.Modal(document.getElementById("modalJuegos"));
+// modificarJuego = true se modifica el juego existente
+// modificarJuego = false quiero agregar uno nuevo
+let modificarJuego = false;
 
 let btnAgregar = document.getElementById("btnAgregar");
 btnAgregar.addEventListener("click", () => {
@@ -85,7 +88,7 @@ function dibujarTabla (_listaJuegos){
         <td>${_listaJuegos[i].url}</td>
         <td><input type="checkbox" class="buttonCheckbox"></td>
         <td>
-            <button class="btn btn-warning">Editar</button>
+            <button class="btn btn-warning" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
             <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
         </td>
     </tr>`;
@@ -119,4 +122,20 @@ window.eliminarJuego = function(boton) {
           )
         }
       })
+}
+
+window.prepararJuegos = function(boton) {
+    console.log(boton.id)
+    let juegoEncontrado = listaJuegos.find(producto => producto.codigo === boton.id);
+    console.log(juegoEncontrado)
+    document.getElementById('codigo').value = juegoEncontrado.codigo;
+    document.getElementById('nombreDeJuego').value = juegoEncontrado.nombreDeJuego;
+    document.getElementById('categoria').value = juegoEncontrado.categoria;
+    document.getElementById('descripcion').value = juegoEncontrado.descripcion;
+    document.getElementById('imagen1').value = juegoEncontrado.imagen1;
+    document.getElementById('imagen2').value = juegoEncontrado.imagen2;
+    document.getElementById('precio').value = juegoEncontrado.precio;
+    document.getElementById('url').value = juegoEncontrado.url;
+
+    modalJuegos.show();
 }

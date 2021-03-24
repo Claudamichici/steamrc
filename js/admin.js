@@ -14,12 +14,12 @@ function agregarJuego() {
 
     let codigo = document.getElementById("codigo").value;
     let nombre = document.getElementById("nombreDeJuego").value;
-    let categoria = document.getElementById("nombreDeJuego").value;
-    let descripcion = document.getElementById("nombreDeJuego").value;
-    let imagen1 = document.getElementById("nombreDeJuego").value;
-    let imagen2 = document.getElementById("nombreDeJuego").value;
-    let precio = document.getElementById("nombreDeJuego").value;
-    let url = document.getElementById("nombreDeJuego").value;
+    let categoria = document.getElementById("categoria").value;
+    let descripcion = document.getElementById("descripcion").value;
+    let imagen1 = document.getElementById("imagen1").value;
+    let imagen2 = document.getElementById("imagen2").value;
+    let precio = document.getElementById("precio").value;
+    let url = document.getElementById("url").value;
 
     let nuevoJuego = new Juegos(
         codigo,
@@ -33,4 +33,17 @@ function agregarJuego() {
     );
 
     listaJuegos.push(nuevoJuego);
+    localStorage.setItem('listaJuegosKey', JSON.stringify(listaJuegos));
+    limpiarFormulario();
+    Swal.fire(
+        'Nuevo producto',
+        'Funkopop se agrego correctamente',
+        'success'
+    )
+}
+
+
+const limpiarFormulario = () => {
+    let formulario = document.getElementById('formJuegos');
+    formulario.reset();
 }

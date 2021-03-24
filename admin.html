@@ -90,13 +90,25 @@
                             </tr>
                         </thead>
                         <tbody id='tablaJuegos'>
+                            <tr class="text-light">
+                                <th scope="row">1</th>
+                                <td>Rocket League</td>
+                                <td>Accion</td>
+                                <td>Juego de autos</td>
+                                <td>$1200</td>
+                                <td>www.youtube.com</td>
+                                <td>
+                                    <button class="btn btn-warning">Editar</button>
+                                    <button class="btn btn-danger">Borrar</button>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
     </main>
     <!--Modal de administración-->
-    <div class="modal" tabindex="-1" id="modalJuegos" onsubmit="">
+    <div class="modal" tabindex="-1" id="modalJuegos">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -104,10 +116,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formJuegos">
+                    <form id="formJuegos" onsubmit="agregarJuego(event)">
                         <div class="mb-3">
                             <label class="form-label">Codigo</label>
-                            <input type="number" id="codigo" class="form-control" placeholder="1" required>
+                            <input type="number" id="codigo" class="form-control" placeholder="1">
                             <div class="invalid-feedback">
                                 Debe ingresar un codigo correcto.
                             </div>
@@ -160,7 +172,7 @@
                                 Debe ingresar un URL correcto.
                             </div>
                         </div>
-                        <button type="button" class="btn btn-success w-100" type="submit">Guardar</button>
+                        <button class="btn btn-success w-100" type="submit">Guardar</button>
                     </form>
                 </div>
             </div>

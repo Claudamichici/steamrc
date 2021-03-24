@@ -7,11 +7,12 @@ const modalJuegos = new bootstrap.Modal(document.getElementById("modalJuegos"));
 
 let btnAgregar = document.getElementById("btnAgregar");
 btnAgregar.addEventListener("click", () => {
+    limpiarFormulario();
     modalJuegos.show();
 });
 
-function agregarJuego() {
-
+window.agregarJuego = function (event) {
+    event.preventDefault();
     let codigo = document.getElementById("codigo").value;
     let nombre = document.getElementById("nombreDeJuego").value;
     let categoria = document.getElementById("categoria").value;
@@ -20,7 +21,7 @@ function agregarJuego() {
     let imagen2 = document.getElementById("imagen2").value;
     let precio = document.getElementById("precio").value;
     let url = document.getElementById("url").value;
-
+    
     let nuevoJuego = new Juegos(
         codigo,
         nombre,
@@ -33,17 +34,37 @@ function agregarJuego() {
     );
 
     listaJuegos.push(nuevoJuego);
+    console.log(listaJuegos)
     localStorage.setItem('listaJuegosKey', JSON.stringify(listaJuegos));
     limpiarFormulario();
     Swal.fire(
         'Nuevo producto',
-        'Funkopop se agrego correctamente',
+        '¡El juego se agrego correctamente!',
         'success'
     )
+
+    modalJuegos.hide()
 }
 
 
 const limpiarFormulario = () => {
     let formulario = document.getElementById('formJuegos');
     formulario.reset();
+    document.getElementById('codigo').className = 'form-control';
+    document.getElementById('nombreDeJuego').className = 'form-control';
+    document.getElementById('categoria').className = 'form-control';
+    document.getElementById('descripcion').className = 'form-control';
+    document.getElementById('precio').className = 'form-control';
+    document.getElementById('url').className = 'form-control';
+}
+
+function leerDatos () {
+    if(localStorage.length > 0){
+        let _listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
+        console.log(_listaJuegos)
+        if(listaJuegos.length === 0){
+            listaJuegos = _listaJuegos;
+        }
+
+    }
 }

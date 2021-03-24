@@ -73,17 +73,18 @@
                     <h3 class="text-center text-light mb-5 my-5">Administracion de juegos</h3>
                 </div>
                 <div class="botonAgregar">
-                    <button class="btn btn-success w-25" id='btnAgregar' data-bs-toggle="modal" data-bs-target="#modalJuegos">Agregar</button>
+                    <button class="btn btn-success w-25" id='btnAgregar'>Agregar</button>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr class="text-light">
                                 <th scope="col">#</th>
-                                <th scope="col">Nombre de juego</th>
+                                <th scope="col">Nombre del juego</th>
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Descripcion</th>
-                                <th scope="col">Publicado</th>
+                                <th scope="col">precio</th>
+                                <th scope="col">URL del trailer</th>
                                 <th scope="col">Opciones</th>
                             </tr>
                         </thead>
@@ -93,6 +94,7 @@
                 </div>
             </section>
     </main>
+    <!--Modal de administración-->
     <div class="modal" tabindex="-1" id="modalJuegos" onsubmit="">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -118,7 +120,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Categoria</label>
-                            <select name="" id="categoria" class="form-control">
+                            <select id="categoria" class="form-control">
                         <option></option>
                         <option>Carreras</option>
                         <option>Acción</option>
@@ -136,12 +138,12 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Imagen</label>
-                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagen">
+                            <label class="form-label">Imagen #1</label>
+                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagen1">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Imagen</label>
-                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagenDos">
+                            <label class="form-label">Imagen #2</label>
+                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagen2">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Precio</label>
@@ -237,14 +239,14 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label  class="form-label">Usuario</label>
+                                <label class="form-label">Usuario</label>
                                 <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label  class="form-label">Contraseña</label>
+                                <label class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
@@ -310,7 +312,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script type="module" src="js/admin.js"></script>
-    <script src="js/validaciones.js"></script>
     <script src="js/contacto.js"></script>
 </body>
 

@@ -11,6 +11,8 @@ btnAgregar.addEventListener("click", () => {
     modalJuegos.show();
 });
 
+leerDatos();
+
 window.agregarJuego = function (event) {
     event.preventDefault();
     let codigo = document.getElementById("codigo").value;
@@ -21,7 +23,7 @@ window.agregarJuego = function (event) {
     let imagen2 = document.getElementById("imagen2").value;
     let precio = document.getElementById("precio").value;
     let url = document.getElementById("url").value;
-    
+
     let nuevoJuego = new Juegos(
         codigo,
         nombre,
@@ -42,8 +44,8 @@ window.agregarJuego = function (event) {
         '¡El juego se agrego correctamente!',
         'success'
     )
-
-    modalJuegos.hide()
+    leerDatos();
+    modalJuegos.hide();
 }
 
 
@@ -65,6 +67,30 @@ function leerDatos () {
         if(listaJuegos.length === 0){
             listaJuegos = _listaJuegos;
         }
-
+        dibujarTabla(_listaJuegos);
     }
+}
+
+function dibujarTabla (_listaJuegos){
+    let tablaJuegos = document.getElementById('tablaJuegos');
+    let filaJuegos = '';
+    tablaJuegos.innerHTML = '';
+    for (let i in _listaJuegos){
+        filaJuegos = `<tr class="text-light">
+        <th scope="row">${_listaJuegos[i].codigo}</th>
+        <td>${_listaJuegos[i].nombreDeJuego}</td>
+        <td>${_listaJuegos[i].categoria}</td>
+        <td>${_listaJuegos[i].descripcion}</td>
+        <td>${_listaJuegos[i].precio}</td>
+        <td>${_listaJuegos[i].url}</td>
+        <td><input type="checkbox" class="buttonCheckbox"></td>
+        <td>
+            <button class="btn btn-warning">Editar</button>
+            <button class="btn btn-danger">Borrar</button>
+        </td>
+    </tr>`;
+
+    tablaJuegos.innerHTML += filaJuegos;
+    }
+
 }

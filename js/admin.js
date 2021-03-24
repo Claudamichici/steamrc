@@ -86,11 +86,37 @@ function dibujarTabla (_listaJuegos){
         <td><input type="checkbox" class="buttonCheckbox"></td>
         <td>
             <button class="btn btn-warning">Editar</button>
-            <button class="btn btn-danger">Borrar</button>
+            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
         </td>
     </tr>`;
 
     tablaJuegos.innerHTML += filaJuegos;
     }
 
+}
+
+window.eliminarJuego = function(boton) {
+    console.log(boton.id);
+    Swal.fire({
+        title: 'Estas seguro de borrar el juego seleccionado?',
+        text: "No puedes volver atras luego de este paso",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si',
+        cancelButtonText: 'Cancelar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let juegosFiltrados = listaJuegos.filter(producto => producto.codigo != boton.id)
+            listaJuegos = juegosFiltrados;
+            localStorage.setItem('listaJuegosKey', JSON.stringify(listaJuegos))
+            leerDatos();
+          Swal.fire(
+            'Listo!',
+            'El juego fue eliminado.',
+            'success'
+          )
+        }
+      })
 }

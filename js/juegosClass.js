@@ -8,6 +8,7 @@ export class Juegos {
         this.imagen2 = imagen2;
         this.precio = precio;
         this.url = url;
-        this.publicado = true;
+        this.publicado = false;
+        this.destacado = false;
     }
 }

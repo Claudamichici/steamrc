@@ -84,8 +84,6 @@ function dibujarTabla (_listaJuegos){
         <td>${_listaJuegos[i].nombreDeJuego}</td>
         <td>${_listaJuegos[i].categoria}</td>
         <td>${_listaJuegos[i].descripcion}</td>
-        <td>${_listaJuegos[i].precio}</td>
-        <td>${_listaJuegos[i].url}</td>
         <td><input type="checkbox" class="buttonCheckbox"></td>
         <td>
             <button class="btn btn-warning" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
@@ -99,7 +97,6 @@ function dibujarTabla (_listaJuegos){
 }
 
 window.eliminarJuego = function(boton) {
-    console.log(boton.id);
     Swal.fire({
         title: 'Estas seguro de borrar el juego seleccionado?',
         text: "No puedes volver atras luego de este paso",
@@ -125,9 +122,7 @@ window.eliminarJuego = function(boton) {
 }
 
 window.prepararJuegos = function(boton) {
-    console.log(boton.id);
     let juegoEncontrado = listaJuegos.find(producto => producto.codigo === boton.id);
-    console.log(juegoEncontrado)
     document.getElementById('codigo').value = juegoEncontrado.codigo;
     document.getElementById('nombreDeJuego').value = juegoEncontrado.nombreDeJuego;
     document.getElementById('categoria').value = juegoEncontrado.categoria;
@@ -142,7 +137,6 @@ window.prepararJuegos = function(boton) {
 
 window.guardarDatos = function(event){
     event.preventDefault();
-    console.log('desde la funcion guardar datos');
     if(modificarJuego){
         modificarJuegoExistente();
     }else{
@@ -162,7 +156,7 @@ function modificarJuegoExistente() {
     
     for (let i in listaJuegos){
         if(listaJuegos[i].codigo === codigo){
-           listaJuegos[i].nombre = nombre;
+           listaJuegos[i].nombreDeJuego = nombre;
            listaJuegos[i].categoria = categoria;
            listaJuegos[i].descripcion = descripcion;
            listaJuegos[i].imagen1 = imagen1;

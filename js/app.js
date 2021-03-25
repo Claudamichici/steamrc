@@ -56,6 +56,25 @@ function categoriaHistoria(){
     }
 }
 
+categoriaDeportes()
+function categoriaDeportes(){
+    if(localStorage.length >0){
+        listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
+        let deportesJS = document.getElementById('deportes');
+         deportes.innerHTML = '';
+
+        for(let i in listaJuegos){
+            if(listaJuegos[i].categoria == "Deportes"){
+
+             let categoriaHTML = `<div class="mx-3 my-4">
+             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/JuegosDeportes/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
+             </div>`;
+                deportesJS.innerHTML += categoriaHTML;
+            }
+        }
+    }
+}
+
 
 
 

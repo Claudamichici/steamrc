@@ -16,8 +16,7 @@ btnAgregar.addEventListener("click", () => {
 
 leerDatos();
 
-window.agregarJuego = function (event) {
-    event.preventDefault();
+ function agregarJuego() {
     let codigo = document.getElementById("codigo").value;
     let nombre = document.getElementById("nombreDeJuego").value;
     let categoria = document.getElementById("categoria").value;
@@ -61,6 +60,7 @@ const limpiarFormulario = () => {
     document.getElementById('descripcion').className = 'form-control';
     document.getElementById('precio').className = 'form-control';
     document.getElementById('url').className = 'form-control';
+    modificarJuego = false;
 }
 
 function leerDatos () {
@@ -125,7 +125,7 @@ window.eliminarJuego = function(boton) {
 }
 
 window.prepararJuegos = function(boton) {
-    console.log(boton.id)
+    console.log(boton.id);
     let juegoEncontrado = listaJuegos.find(producto => producto.codigo === boton.id);
     console.log(juegoEncontrado)
     document.getElementById('codigo').value = juegoEncontrado.codigo;
@@ -136,6 +136,47 @@ window.prepararJuegos = function(boton) {
     document.getElementById('imagen2').value = juegoEncontrado.imagen2;
     document.getElementById('precio').value = juegoEncontrado.precio;
     document.getElementById('url').value = juegoEncontrado.url;
-
+    modificarJuego = true;
     modalJuegos.show();
+}   
+
+window.guardarDatos = function(event){
+    event.preventDefault();
+    console.log('desde la funcion guardar datos');
+    if(modificarJuego){
+        modificarJuegoExistente();
+    }else{
+        agregarJuego();
+    }
+}
+
+function modificarJuegoExistente() {
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.getElementById('nombreDeJuego').value;
+    let categoria = document.getElementById('categoria').value;
+    let descripcion = document.getElementById('descripcion').value;
+    let imagen1 = document.getElementById('imagen1').value;
+    let imagen2 = document.getElementById('imagen2').value;
+    let precio = document.getElementById('precio').value;
+    let url = document.getElementById('url').value;
+    
+    for (let i in listaJuegos){
+        if(listaJuegos[i].codigo === codigo){
+           listaJuegos[i].nombre = nombre;
+           listaJuegos[i].categoria = categoria;
+           listaJuegos[i].descripcion = descripcion;
+           listaJuegos[i].imagen1 = imagen1;
+           listaJuegos[i].imagen2 = imagen2;
+           listaJuegos[i].precio = precio;
+           listaJuegos[i].url = url;
+        };
+    }
+    localStorage.setItem('listaJuegosKey', JSON.stringify(listaJuegos));
+    Swal.fire(
+        'Juego modificado',
+        'El juego se actualizo correctamente',
+        'success'
+    );
+    modalJuegos.hide();
+    leerDatos();
 }

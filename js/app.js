@@ -4,7 +4,7 @@ function categoriaManejo(){
     if(localStorage.length >0){
         listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
         let manejoJS = document.getElementById('manejo');
-         manejoJS.innerHTML = '';
+        manejoJS.innerHTML = '';
 
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria == "Manejo"){
@@ -77,15 +77,9 @@ function categoriaDeportes(){
 
 
 
-
-
-
-
-
-
-
-
-function abrirDetalles(){
-    window.location.href = "detalles.html";
-}
+window.abrirDetalles = function (codigo) {
+    let idDetalle = codigo;
+    localStorage.setItem("idKey", JSON.stringify(idDetalle));
+    location.href = "detalles.html";
+};
 

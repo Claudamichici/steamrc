@@ -10,6 +10,7 @@ function detalleJuego(codigo){
     let listaJuegos = JSON.parse(localStorage.getItem("listaJuegosKey"));
     let detalle = document.getElementById('detallesIndex');
     let detalleCompra = document.getElementById('detalleCompra');
+    let detalleDescripcion = document.getElementById('detalleDescripcion');
     let juegoFiltrado = listaJuegos.filter(function (nuevoJuego) {
         return nuevoJuego.codigo == codigo;
     });
@@ -49,7 +50,7 @@ function detalleJuego(codigo){
         <div>
             <iframe class="video" src="${juegoFiltrado[0].url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             <div class="mt-2 fuenteDetalleSmall2">
-                <p class="fuenteDetalleSmall">${juegoFiltrado[0].descripcion}</p>
+                <p class="fuenteDetalleSmall"></p>
                 <div class="row mt-2">
                     <div class="col-6">
                         <p class="fuenteDetalleSmall fuenteDetalleColor1">RESEÑAS GENERALES:
@@ -89,5 +90,13 @@ detalleCompra.innerHTML = '';
     
  detalleCompra.innerHTML += detalleAbajo;
 
+// detalle descripcion
+detalleDescripcion.innerHTML = '';
+
+let detalleDesc = `<h4>Acerca de este juego</h4>
+<hr>
+<p class="textos">${juegoFiltrado[0].descripcion}</p>`;
+
+detalleDescripcion.innerHTML += detalleDesc;
 
 }

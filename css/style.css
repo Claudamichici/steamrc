@@ -251,3 +251,12 @@ textarea{
         font-size: 70%;
     }
 }
+
+.buttonCheckbox{
+    transform: scale(2.0);
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.buttonCheckboxModal{
+    transform: scale(1.5);
+}

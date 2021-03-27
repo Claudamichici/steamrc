@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
     <title>Steam</title>
 </head>
@@ -83,19 +84,19 @@
                                 <th scope="col">Nombre del juego</th>
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Descripcion</th>
-                                <th scope="col">precio</th>
-                                <th scope="col">URL del trailer</th>
+                                <th scope="col">Publicado</th>
                                 <th scope="col">Opciones</th>
                             </tr>
                         </thead>
                         <tbody id='tablaJuegos'>
+                            
                         </tbody>
                     </table>
                 </div>
             </section>
     </main>
     <!--Modal de administración-->
-    <div class="modal" tabindex="-1" id="modalJuegos" onsubmit="">
+    <div class="modal" tabindex="-1" id="modalJuegos">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -103,10 +104,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formJuegos">
+                    <form id="formJuegos" onsubmit="guardarDatos(event)">
                         <div class="mb-3">
                             <label class="form-label">Codigo</label>
-                            <input type="number" id="codigo" class="form-control" placeholder="1" required>
+                            <input type="number" id="codigo" class="form-control" placeholder="1">
                             <div class="invalid-feedback">
                                 Debe ingresar un codigo correcto.
                             </div>
@@ -122,9 +123,10 @@
                             <label class="form-label">Categoria</label>
                             <select id="categoria" class="form-control">
                         <option></option>
-                        <option>Carreras</option>
-                        <option>Acción</option>
+                        <option>Manejo</option>
+                        <option>Disparos</option>
                         <option>Historia</option>
+                        <option>Deportes</option>
                     </select>
                             <div class="invalid-feedback">
                                 Debe ingresar una categoria correcta.
@@ -159,7 +161,7 @@
                                 Debe ingresar un URL correcto.
                             </div>
                         </div>
-                        <button type="button" class="btn btn-success w-100" type="submit">Guardar</button>
+                        <button class="btn btn-success w-100" type="submit">Guardar</button>
                     </form>
                 </div>
             </div>

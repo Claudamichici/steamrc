@@ -9,15 +9,15 @@ function dibujarDetalle(){
 function detalleJuego(codigo){
     let listaJuegos = JSON.parse(localStorage.getItem("listaJuegosKey"));
     let detalle = document.getElementById('detallesIndex');
-
+    let detalleCompra = document.getElementById('detalleCompra');
     let juegoFiltrado = listaJuegos.filter(function (nuevoJuego) {
         return nuevoJuego.codigo == codigo;
     });
     document.title = juegoFiltrado[0].nombreDeJuego;
     detalle.innerHTML = '';
     //slider 
-    let detalleHTML = ` <div>
-    <p class="fuenteDetalleSmall fuenteDetalleColor3"><a href="index.html" class="textLink">Todos los juegos</a> > <a href="index.html" class="textLink">Carreras</a> > <a href="detalles.html" class="textLink">${juegoFiltrado[0].nombreDeJuego}</a></p>
+    let detalleHTML = `<div>
+    <p class="fuenteDetalleSmall fuenteDetalleColor3"><a href="index.html" class="textLink">Todos los juegos</a> > <a href="index.html" <a href="detalles.html" class="textLink">${juegoFiltrado[0].nombreDeJuego}</a></p>
 </div>
 <h1 class="text-light"><b>${juegoFiltrado[0].nombreDeJuego}</b></h1>
 <div class="row intro p-2">
@@ -27,9 +27,10 @@ function detalleJuego(codigo){
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
                     <div class="carousel-inner" id="sliderDetalles">
                         <div class="carousel-item active">
-                            <img src="img/juegosDisparos/${juegoFiltrado[0].imagen1}" class="w-100" alt="...">
+                            <img src="img/forza-horizon-4_15.jpg" class="w-100">
                         </div>
-                            <img src="img/Forza-horizon4(3).jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-item">
+                            <img src="img/Forza-horizon4(3).jpg" class="d-block w-100">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -76,5 +77,17 @@ function detalleJuego(codigo){
 
 detalle.innerHTML += detalleHTML;
 
-}
 
+// detalle de abajo
+
+detalleCompra.innerHTML = '';
+
+ let detalleAbajo = `<span class="fuenteDetalleLarge">Comprar ${juegoFiltrado[0].nombreDeJuego}: Edición Estandar</span>
+ <div class="plataformaCompra py-1 px-1">
+     <span class="fuenteDetalleSmall">ARS$${juegoFiltrado[0].precio} </i><a class="boton-comprar btn" href="error404.html">Añadir al carro</a></span>
+ </div>`;
+    
+ detalleCompra.innerHTML += detalleAbajo;
+
+
+}

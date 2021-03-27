@@ -86,7 +86,7 @@ function dibujarTabla (_listaJuegos){
         <td>${_listaJuegos[i].descripcion}</td>
         <td><input type="checkbox" class="buttonCheckbox"></td>
         <td>
-            <button class="btn btn-warning" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
+            <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
             <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
         </td>
     </tr>`;

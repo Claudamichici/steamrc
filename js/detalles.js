@@ -27,10 +27,10 @@ function detalleJuego(codigo){
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
                     <div class="carousel-inner" id="sliderDetalles">
                         <div class="carousel-item active">
-                            <img src="img/forza-horizon-4_15.jpg" class="w-100">
+                            <img src="img/imgdetalles/${juegoFiltrado[0].imagen1}" class="w-100">
                         </div>
                         <div class="carousel-item">
-                            <img src="img/Forza-horizon4(3).jpg" class="d-block w-100">
+                            <img src="img/imgdetalles/${juegoFiltrado[0].imagen2}" class="d-block w-100">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

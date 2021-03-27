@@ -10,7 +10,7 @@ function categoriaManejo(){
             if(listaJuegos[i].categoria == "Manejo"){
 
              let categoriaHTML = `<div class="mx-3 my-4">
-             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/JuegosManejo/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
+             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
              </div>`;
                 manejoJS.innerHTML += categoriaHTML;
             }
@@ -29,7 +29,7 @@ function categoriaDisparos(){
             if(listaJuegos[i].categoria == "Disparos"){
 
              let categoriaHTML = `<div class="mx-3 my-4">
-             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/JuegosDisparos/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
+             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
              </div>`;
                 disparosJS.innerHTML += categoriaHTML;
             }
@@ -48,7 +48,7 @@ function categoriaHistoria(){
             if(listaJuegos[i].categoria == "Historia"){
 
              let categoriaHTML = `<div class="mx-3 my-4">
-             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/JuegosHistoria/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
+             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
              </div>`;
                 historiaJS.innerHTML += categoriaHTML;
             }
@@ -67,7 +67,7 @@ function categoriaDeportes(){
             if(listaJuegos[i].categoria == "Deportes"){
 
              let categoriaHTML = `<div class="mx-3 my-4">
-             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/JuegosDeportes/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
+             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
              </div>`;
                 deportesJS.innerHTML += categoriaHTML;
             }

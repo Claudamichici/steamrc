@@ -24,11 +24,11 @@ function detalleJuego(codigo){
 <div class="row intro p-2">
     <div class="col-lg-8 rounded-start p-1">
         <div>
-            <article>
+            <article >
                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
                     <div class="carousel-inner" id="sliderDetalles">
                         <div class="carousel-item active">
-                            <img src="img/imgdetalles/${juegoFiltrado[0].imagen1}" class="w-100">
+                            <img src="img/imgdetalles/${juegoFiltrado[0].imagen1}" class="w-100 h-100">
                         </div>
                         <div class="carousel-item">
                             <img src="img/imgdetalles/${juegoFiltrado[0].imagen2}" class="d-block w-100">

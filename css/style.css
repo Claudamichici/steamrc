@@ -3,6 +3,17 @@
     font-family: 'Quattrocento Sans', sans-serif;
 }
 
+.fondo{
+    background-image: url("/img/City17.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main{
+    min-height: 100vh;
+}
+
 .lista {
     list-style: none;
     padding: 0;
@@ -10,10 +21,6 @@
 
 body {
     margin-top: 110px;
-    min-height: 100vh;
-}
-
-.body {
     background: rgb(25, 64, 90);
     background: linear-gradient(180deg, rgba(25, 64, 90, 1) 0%, rgba(14, 38, 54, 1) 49%, rgba(14, 38, 54, 1) 100%);
 }
@@ -171,7 +178,7 @@ textarea{
 
 .intro {
     background-color: #0a141d;
-    height: 430px;
+    height: 100%;
 }
 
 .contenedor404 {

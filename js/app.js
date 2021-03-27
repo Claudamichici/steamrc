@@ -76,7 +76,6 @@ function categoriaDeportes(){
 }
 
 
-
 window.abrirDetalles = function (codigo) {
     let idDetalle = codigo;
     localStorage.setItem("idKey", JSON.stringify(idDetalle));

@@ -1,25 +1,27 @@
-const fila = document.getElementById('contenedor-carusel')
+//const fila = document.getElementById('contenedor-carusel')
 const juegos = document.querySelectorAll('.game');
 
-function flechaderecha(boton){
+function flechaderecha(boton,contenedorCarusel){
+    let fila = document.getElementById(contenedorCarusel)
     fila.scrollLeft += fila.offsetWidth;
-    const indicadorActivo = document.querySelector('.indicadores .active');
+    let indicadorActivo = document.querySelector('.indicadores .active');
     if(indicadorActivo.nextSibling){
         indicadorActivo.nextSibling.classList.add('active');
         indicadorActivo.classList.remove('active');
     }
 }
 
-function flechaizquierda(boton){
+function flechaizquierda(boton,contenedorCarusel){
+    let fila = document.getElementById(contenedorCarusel)
     fila.scrollLeft -= fila.offsetWidth;
-    const indicadorActivo = document.querySelector('.indicadores .active');
+    let indicadorActivo = document.querySelector('.indicadores .active');
     if(indicadorActivo.previousSibling){
         indicadorActivo.previousSibling.classList.add('active');
         indicadorActivo.classList.remove('active');
     }
 }
 
-//Paginacion
+//------------------Paginacion------------------------
 const numeroPaginas = Math.ceil(juegos.length/4);
 for(let i = 0; i < numeroPaginas; i++){
     const indicador = document.createElement('button');
@@ -32,30 +34,6 @@ for(let i = 0; i < numeroPaginas; i++){
         document.querySelector('.indicadores .active').classList.remove('active')
         e.target.classList.add('active');
     })
-}
-
-
-
-//Borrar funciones agregadas si encontramos la manera de crear la variable
-const fila1 = document.querySelector('.contenedor-carusel1');
-const juegos1 = document.querySelectorAll('.game1');
-
-function flechaderechaa(boton){
-    fila1.scrollLeft += fila1.offsetWidth;
-    const indicadorActivo1 = document.querySelector('.indicadores1 .active');
-    if(indicadorActivo1.nextSibling){
-        indicadorActivo1.nextSibling.classList.add('active');
-        indicadorActivo1.classList.remove('active');
-    }
-}
-
-function flechaizquierdaa(boton){
-    fila1.scrollLeft -= fila1.offsetWidth;
-    const indicadorActivo1 = document.querySelector('.indicadores1 .active');
-    if(indicadorActivo1.previousSibling){
-        indicadorActivo1.previousSibling.classList.add('active');
-        indicadorActivo1.classList.remove('active');
-    }
 }
 
 //Paginacion

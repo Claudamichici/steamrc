@@ -91,6 +91,7 @@ function dibujarTabla (_listaJuegos){
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
             <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-outline-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="fas fa-star"></i></button>
         </td>
     </tr>`;
 
@@ -107,6 +108,7 @@ function dibujarTabla (_listaJuegos){
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
             <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-outline-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="fas fa-star"></i></button>
         </td>
     </tr>`;
     tablaJuegos.innerHTML += filaJuegos;
@@ -122,6 +124,7 @@ function dibujarTabla (_listaJuegos){
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
             <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-outline-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="fas fa-star"></i></button>
         </td>
     </tr>`;
     tablaJuegos.innerHTML += filaJuegos;
@@ -137,6 +140,7 @@ function dibujarTabla (_listaJuegos){
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
             <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-outline-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="fas fa-star"></i></button>
         </td>
     </tr>`;
     tablaJuegos.innerHTML += filaJuegos;
@@ -242,4 +246,24 @@ window.publicar = function (id){
         }
         localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
     }
+};
+
+window.destacarItem = function (codigo){
+    for (let i in listaJuegos){
+        if(listaJuegos[i].codigo == codigo){
+            if(listaJuegos[i].destacado == false){
+                listaJuegos[i].destacado = true;
+                for(let i in listaJuegos){
+                    if(listaJuegos[i].codigo != codigo){
+                        listaJuegos[i].destacado = false;
+                    }
+                }
+                localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+            }else{
+                listaJuegos[i].destacado = false;
+                localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+            }
+        }
+    }
+    leerDatos();
 };

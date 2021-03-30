@@ -174,8 +174,3 @@ function modificarJuegoExistente() {
     modalJuegos.hide();
     leerDatos();
 }
-
-// ==> En esta sección se desarrolla toda la lógica del login de usuarios y administradores. <==
-
-let admin = ['admin', '123456'];
-let user = [];

@@ -182,10 +182,6 @@ textarea {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.6951914554884453) 0%, rgba(0, 0, 0, 0.8436508392419468) 76%);
 }
 
-.gordon {
-    position: relative;
-}
-
 @media (max-width: 1400px) and (min-width: 1200px) {
     .plataformaCompra {
         margin-left: 65%;

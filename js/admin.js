@@ -79,19 +79,68 @@ function dibujarTabla (_listaJuegos){
     let filaJuegos = '';
     tablaJuegos.innerHTML = '';
     for (let i in _listaJuegos){
+        if(_listaJuegos[i].publicado == false && _listaJuegos[i].destacado == false){
         filaJuegos = `<tr class="text-light">
         <th scope="row">${_listaJuegos[i].codigo}</th>
         <td>${_listaJuegos[i].nombreDeJuego}</td>
         <td>${_listaJuegos[i].categoria}</td>
         <td>${_listaJuegos[i].descripcion}</td>
-        <td><input type="checkbox" class="buttonCheckbox"></td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)">
+        </td>
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
             <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
         </td>
     </tr>`;
 
+        tablaJuegos.innerHTML += filaJuegos;
+        }else if(_listaJuegos[i].publicado == true && _listaJuegos[i].destacado == false){
+            filaJuegos = `<tr class="text-light">
+        <th scope="row">${_listaJuegos[i].codigo}</th>
+        <td>${_listaJuegos[i].nombreDeJuego}</td>
+        <td>${_listaJuegos[i].categoria}</td>
+        <td>${_listaJuegos[i].descripcion}</td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)" checked>
+        </td>
+        <td>
+            <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
+            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+        </td>
+    </tr>`;
     tablaJuegos.innerHTML += filaJuegos;
+        }else if(_listaJuegos[i].publicado == false && _listaJuegos[i].destacado == true){
+            filaJuegos = `<tr class="text-light">
+        <th scope="row">${_listaJuegos[i].codigo}</th>
+        <td>${_listaJuegos[i].nombreDeJuego}</td>
+        <td>${_listaJuegos[i].categoria}</td>
+        <td>${_listaJuegos[i].descripcion}</td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)">
+        </td>
+        <td>
+            <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
+            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+        </td>
+    </tr>`;
+    tablaJuegos.innerHTML += filaJuegos;
+        }else if(_listaJuegos[i].publicado == true && _listaJuegos[i].destacado == true){
+            filaJuegos = `<tr class="text-light">
+        <th scope="row">${_listaJuegos[i].codigo}</th>
+        <td>${_listaJuegos[i].nombreDeJuego}</td>
+        <td>${_listaJuegos[i].categoria}</td>
+        <td>${_listaJuegos[i].descripcion}</td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)" checked>
+        </td>
+        <td>
+            <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
+            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+        </td>
+    </tr>`;
+    tablaJuegos.innerHTML += filaJuegos;
+        }
     }
 
 }
@@ -174,3 +223,23 @@ function modificarJuegoExistente() {
     modalJuegos.hide();
     leerDatos();
 }
+
+window.publicar = function (id){
+    let check = document.getElementById(`${id}`);
+    console.log(check);
+    if (check.checked){
+        for (let i in listaJuegos){
+            if(listaJuegos[i].codigo == id){
+                listaJuegos[i].publicado = true;
+            }
+        }
+        localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+    }else{
+        for (let i in listaJuegos){
+            if(listaJuegos[i].codigo == id){
+                listaJuegos[i].publicado = false;
+            }
+        }
+        localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+    }
+};

@@ -7,7 +7,7 @@ function categoriaManejo(){
         manejoJS.innerHTML = '';
 
         for(let i in listaJuegos){
-            if(listaJuegos[i].categoria == "Manejo"){
+            if( listaJuegos[i].publicado == true && listaJuegos[i].categoria == "Manejo"){
 
             let categoriaHTML = `<div class="mx-3 my-4">
             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
@@ -26,7 +26,7 @@ function categoriaDisparos(){
         disparosJS.innerHTML = '';
 
         for(let i in listaJuegos){
-            if(listaJuegos[i].categoria == "Disparos"){
+            if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == "Disparos"){
 
             let categoriaHTML = `<div class="mx-3 my-4">
             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
@@ -45,7 +45,7 @@ function categoriaHistoria(){
          historiaJS.innerHTML = '';
 
         for(let i in listaJuegos){
-            if(listaJuegos[i].categoria == "Historia"){
+            if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == "Historia"){
 
              let categoriaHTML = `<div class="mx-3 my-4">
              <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
@@ -64,7 +64,7 @@ function categoriaDeportes(){
          deportes.innerHTML = '';
 
         for(let i in listaJuegos){
-            if(listaJuegos[i].categoria == "Deportes"){
+            if(listaJuegos[i].publicado == true && listaJuegos[i].categoria == "Deportes"){
 
              let categoriaHTML = `<div class="mx-3 my-4">
              <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>

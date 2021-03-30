@@ -3,14 +3,14 @@
     font-family: 'Quattrocento Sans', sans-serif;
 }
 
-.fondo{
+.fondo {
     background-image: url("/img/City17.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-main{
+main {
     min-height: 100vh;
 }
 
@@ -33,16 +33,15 @@ footer {
     background: #171a21;
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
-#particles-js
-{
-	height: 100%;
-	position: absolute;
-	top: 0;
-	width: 100vw;
+#particles-js {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100vw;
     z-index: -1;
 }
 
@@ -150,19 +149,16 @@ textarea{
     background: linear-gradient(90deg, rgba(34, 34, 34, 0.5410539215686274) 0%, rgba(31, 31, 31, 1) 35%, rgba(22, 22, 22, 1) 100%);
 }
 
-.persona
-{
+.persona {
     margin: 40px;
 }
 
-.persona:nth-child(odd)
-{
+.persona:nth-child(odd) {
     background-color: #00DBDE;
     background-image: linear-gradient(90deg, #00DBDE 0%, #171a21 73%);
 }
 
-.persona:nth-child(even)
-{
+.persona:nth-child(even) {
     background-color: #171a21;
     background-image: linear-gradient(90deg, #171a21 28%, #00DBDE 73%);
 }
@@ -203,19 +199,16 @@ textarea{
     .intro {
         height: 540px;
     }
-
 }
 
-@media screen and (max-width: 1024px){
-    .persona:nth-child(even){
+@media screen and (max-width: 1024px) {
+    .persona:nth-child(even) {
         background-image: linear-gradient(to bottom, #171a21 28%, #00DBDE 73%);
-    }   
-    
-    .persona:nth-child(odd){
+    }
+    .persona:nth-child(odd) {
         background-image: linear-gradient(to top, #00DBDE 0%, #171a21 73%);
-    }   
-    
-    .persona img{
+    }
+    .persona img {
         object-fit: cover;
     }
 }
@@ -259,11 +252,12 @@ textarea{
     }
 }
 
-.buttonCheckbox{
+.buttonCheckbox {
     transform: scale(2.0);
     margin-left: 30px;
     margin-top: 10px;
 }
-.buttonCheckboxModal{
+
+.buttonCheckboxModal {
     transform: scale(1.5);
 }

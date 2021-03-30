@@ -103,17 +103,17 @@
             <!-- Carousel 1 de juegos -->
             <section class="container">
                 <div class="py-3">
-                    <h4 class="text-center text-light">Manejo</h4>
+                    <h4 class="text-center text-light">Carreras</h4>
                 </div>
-                    <article class="row">
-                        <div class="d-flex justify-content-evenly" id="manejo">
-                        </div>
-                    </article>
+                <article class="row">
+                    <div class="d-flex justify-content-evenly" id="manejo">
+                    </div>
+                </article>
             </section>
             <!-- Carousel 2 de juegos -->
             <section class="container">
                 <div class="py-3">
-                    <h4 class="text-center text-light">Disparos</h4>
+                    <h4 class="text-center text-light">Acción</h4>
                 </div>
                 <article class="row">
                     <div class="d-flex justify-content-evenly" id="disparos">
@@ -143,8 +143,7 @@
             <!-- Final de seccion juegos -->
         </section>
     </main>
-    <!-- Modal 1 -->
-    <!-- Modal -->
+    <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -203,8 +202,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal 2 -->
-    <!-- Modal -->
+    <!--Modal de ingreso-->
     <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -217,14 +215,14 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label  class="form-label">Usuario</label>
+                                <label class="form-label">Usuario</label>
                                 <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label  class="form-label">Contraseña</label>
+                                <label class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
@@ -259,9 +257,7 @@
             </div>
         </div>
     </div>
-    <!-- Fin de modal -->
-    <!-- Modal 3 -->
-    <!-- Modal -->
+    <!--Modal de recuperar contraseña-->
     <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -274,7 +270,9 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <div><p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p></div>
+                                <div>
+                                    <p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p>
+                                </div>
                                 <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un mail válido.

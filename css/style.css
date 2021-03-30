@@ -21,20 +21,10 @@ main{
 
 body {
     margin-top: 110px;
-<<<<<<< HEAD
-   
-}
-
-.body {
-=======
->>>>>>> bd26e4e6ee7a1b51810fb1f0d7755819b11903ea
     background: rgb(25, 64, 90);
     background: linear-gradient(180deg, rgba(25, 64, 90, 1) 0%, rgba(14, 38, 54, 1) 49%, rgba(14, 38, 54, 1) 100%);
 }
 
-main{
-    min-height: 100vh;
-}
 nav {
     background: #171a21;
 }

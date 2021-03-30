@@ -102,21 +102,43 @@
             </section>
             <!-- Carousel 1 de juegos -->
             <section class="container">
-                <div class="py-3">
-                    <h4 class="text-center text-light">Manejo</h4>
-                </div>
                     <article class="row">
-                        <div class="d-flex justify-content-evenly" id="manejo">
+                        <!--id="manejo"-->
+                        <div class="categoria-carusel py-3">
+                            <div class="titulo-controles">
+                                <h3 class="text-center text-light">Manejo</h3>
+                                <div class="indicadores">
+                                </div>
+                            </div>
+                            <div class="contenedor">
+                                <button role="button" class="flecha-izquierda" onclick="flechaizquierda(this)"><i class="fas fa-angle-left"></i></button>
+                                <div class="contenedor-carusel" id="contenedor-carusel">
+                                    <div class="carusel" id="manejo">
+                                    </div>
+                                </div>
+                                <button role="button" class="flecha-derecha" onclick="flechaderecha(this)"><i class="fas fa-angle-right"></i></button>
+                            </div>
                         </div>
                     </article>
             </section>
             <!-- Carousel 2 de juegos -->
             <section class="container">
-                <div class="py-3">
-                    <h4 class="text-center text-light">Disparos</h4>
-                </div>
                 <article class="row">
-                    <div class="d-flex justify-content-evenly" id="disparos">
+                    <!-- id="disparos" -->
+                    <div class="categoria-carusel py-3">
+                        <div class="titulo-controles">
+                            <h3 class="text-center text-light">Disparos</h3>
+                            <div class="indicadores1">
+                            </div>
+                        </div>
+                        <div class="contenedor">
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierdaa(this)"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel1" id="papa" >
+                                <div class="carusel" id="disparos">
+                                </div>
+                            </div>
+                            <button role="button" class="flecha-derecha" onclick="flechaderechaa(this)"><i class="fas fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </section>
@@ -333,6 +355,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="js/carrusel.js"></script>
 </body>
 
 </html>

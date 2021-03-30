@@ -8,10 +8,7 @@ function categoriaManejo(){
 
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria == "Manejo"){
-
-            let categoriaHTML = `<div class="mx-3 my-4">
-            <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
-            </div>`;
+            let categoriaHTML = `<div class="px-1 py-1 game"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;
                 manejoJS.innerHTML += categoriaHTML;
             }
         }
@@ -27,10 +24,7 @@ function categoriaDisparos(){
 
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria == "Disparos"){
-
-            let categoriaHTML = `<div class="mx-3 my-4">
-            <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
-            </div>`;
+            let categoriaHTML = `<div class="px-1 py-1 game1"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;
                 disparosJS.innerHTML += categoriaHTML;
             }
         }

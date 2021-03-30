@@ -15,7 +15,7 @@
     <title>Steam</title>
 </head>
 
-<body class="body">
+<body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
@@ -94,6 +94,7 @@
                     </table>
                 </div>
             </section>
+        </div>
     </main>
     <!--Modal de administración-->
     <div class="modal" tabindex="-1" id="modalJuegos">
@@ -241,14 +242,14 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label class="form-label">Usuario</label>
+                                <label  class="form-label">Usuario</label>
                                 <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Contraseña</label>
+                                <label  class="form-label">Contraseña</label>
                                 <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
@@ -265,8 +266,47 @@
                             <button type="submit" class="btn btn-success">Ingresar</button>
                         </form>
                         <hr class="hrs">
-                        <a class="dropdown-item text-light" href="#">¡Registrate!</a>
-                        <a class="dropdown-item text-light" href="#">¿Olvidaste tu contraseña?</a>
+                        <div><a class="hobmodales text-light" href="#" data-bs-toggle="modal" data-bs-target="#registromodal" data-bs-dismiss="modal">¡Registrate!</a></div>
+                        <div class="py-2"><a class="text-light hobmodales" href="#" data-bs-toggle="modal" data-bs-target="#recuperar" data-bs-dismiss="modal">¿Olvidaste tu contraseña?</a></div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex">
+                            <div>
+                                <img src="img/footerLogo_valve_new.png" alt="Logo-de-valve" class="w-100">
+                            </div>
+                            <p>© 2021 Valve Corporation. Todos los derechos reservados. Todos los precios incluyen IVA (donde sea aplicable).</p>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-end">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de modal -->
+    <!-- Modal 3 -->
+    <!-- Modal -->
+    <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-modal p-4">
+                <div class="text-light d-flex flex-column">
+                    <div>
+                        <img src="img/logo_steam.svg" alt="Logo steam" class="w-25">
+                        <h4 class="text-center">Ingreso</h4>
+                        <hr class="hrs">
+                    </div>
+                    <div class="modal-body text-light">
+                        <form class="px-4 py-3">
+                            <div class="mb-3">
+                                <div><p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p></div>
+                                <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un mail válido.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Recuperar</button>
+                        </form>
                     </div>
                     <div class="modal-footer">
                         <div class="d-flex">
@@ -316,5 +356,4 @@
     <script type="module" src="js/admin.js"></script>
     <script src="js/contacto.js"></script>
 </body>
-
 </html>

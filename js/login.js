@@ -22,4 +22,4 @@ window.cerrarSesion = function (){
     let user = "";
     localStorage.setItem("userKey", JSON.stringify(user));
     location.href ="index.html";
-}
+};

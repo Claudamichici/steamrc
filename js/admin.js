@@ -225,7 +225,7 @@ function modificarJuegoExistente() {
     );
     modalJuegos.hide();
     leerDatos();
-}
+};
 
 window.publicar = function (id){
     let check = document.getElementById(`${id}`);

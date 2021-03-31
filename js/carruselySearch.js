@@ -18,8 +18,10 @@ let filtrar = ()=>{
     const texto = formulario.value.toLowerCase();
     for(let producto of listaJuegos){
         let nombre = producto.nombreDeJuego.toLowerCase();
-        if(nombre.indexOf(texto) !== -1){
-            resultado.innerHTML += `<a class="text-light" href="#" onclick="abrirDetalles(this.id)" id="${producto.codigo}">${producto.nombreDeJuego} <br></a>`
+        if(texto.length >= 1){
+            if(nombre.indexOf(texto) !== -1){
+                resultado.innerHTML += `<a class="text-light" href="#" onclick="abrirDetalles(this.id)" id="${producto.codigo}">${producto.nombreDeJuego} <br><hr></a>`
+            };
         };
     };
 
@@ -33,3 +35,4 @@ boton.addEventListener('click', filtrar);
 //formulario.addEventListener('keyup', filtrar);
 
 //filtrar();
+

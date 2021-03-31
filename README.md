@@ -4,7 +4,7 @@ _Es una tienda virtual de videojuegos donde puedes adquirir diferentes títulos 
 
 ## 💻 Demo del Proyecto
 
-_Mira una demo del_ [Proyecto Steam](https://store.steampowered.com/sale/steamgamefestival)
+_Mira una demo del_ [Proyecto Steam](https://steamrc.netlify.app/)
 
 
 ## 📄 Pasos a seguir para usar el proyecto
@@ -20,7 +20,6 @@ _Se agregaron las siguientes librerias al proyecto:_
 1. [Fontawesome](https://fontawesome.com/)
 1. [Sweetalert2](https://sweetalert2.github.io/)
 
-1. [Particles.js](https://codepen.io/VincentGarreau/pen/pnlso)
 
 ## 🧑👩 Autores 🧒👱‍♂️
 - Alderete Nicolas Emanuel

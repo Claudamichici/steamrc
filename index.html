@@ -68,20 +68,25 @@
     </header>
     <main>
         <section class="container pb-5">
-            <section class="pt-3 container">
-                <div class="lead text-light d-flex justify-content-between my-3">
-                    <h3>Destacado y recomendado</h3>
-                    <div class="p-1 rounded">
-                        <form class="d-flex">
-                            <input class="form-control me-2" id="inputBuscar" type="search" placeholder="buscar en tienda" aria-label="Search">
-                            <button class="btn btn-success" id="btnBuscar">Buscar</button>
-                        </form>
+            <section class="pt-3 container row">
+                    <div class="lead text-light d-flex justify-content-between my-3">
+                        <h3>Destacado y recomendado</h3>
+                    </div>
+                    <div class="col-md-9 col-sm-12">
+                    <!-- Destacado -->
+                    <article id="destacado">
+                    </article>
+                </div>
+                <div class="col-md-3 col-sm-12 my-3">
+                    <div class="p-1 rounded ">
+                        <div class="bg-search rounded p-3">
+                            <h4 class="text-light p-2">Buscador de juegos</h4>
+                            <input type="text" class="form-control me-2 mb-2" id="formulario" placeholder="Nombre del juego">
+                            <button class="btn btn-success m-2" id="boton">Buscar</button>
+                            <ul id="resultados" class="text-light"></ul>
+                        </div>
                     </div>
                 </div>
-                <!-- Destacado -->
-                <article id="destacado">
-
-                </article>
             </section>
             <!--titulo-->
             <section class="pt-3">
@@ -332,7 +337,7 @@
                     <li><a href="index.html" class="text-light">Inicio</a></li>
                     <li><a href="nosotros.html" class="text-light">Acerca de Nosotros</a></li>
                     <li><a href="contacto.html" class="text-light">Contacto</a></li>
-                    <li><a href="#modalRegistro" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Registrarse</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Ingresar</a></li>
                 </ul>
             </article>
             <article class="col-sm-12 col-md-4 align-items-center text-light">
@@ -360,7 +365,7 @@
     <script src="js/contacto.js"></script>
     <script src="js/verificador.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/carrusel.js"></script>
+    <script src="js/carruselySearch.js"></script>
 </body>
 
 </html>

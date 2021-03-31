@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
-    <title>Steam</title>
+    <title>Administrar productos</title>
 </head>
 
 <body>
@@ -25,8 +25,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-                        <li class="nav-item mx-2">
-                            <a class="nav-link active" href="index.html">
+                        <li class="nav-item active mx-2">
+                            <a class="nav-link" href="index.html">
                                 <i class="fas fa-home fa-x"></i>
                                 <div>Inicio</div>
                             </a>
@@ -52,7 +52,7 @@
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link d-none" href="admin.html" id="adminNavbar"><i class="fas fa-user-shield fa-x"></i>
+                            <a class="nav-link active d-none" href="admin.html" id="adminNavbar"><i class="fas fa-user-shield fa-x"></i>
                                 <div>Administración</div>
                             </a>
                         </li>
@@ -67,117 +67,112 @@
         </nav>
     </header>
     <main>
-        <section class="container pb-5">
-            <section class="pt-3 container">
-                <div class="lead text-light d-flex justify-content-between my-3">
-                    <h3>Destacado y recomendado</h3>
-                    <div class="p-1 rounded">
-                        <form class="d-flex">
-                            <input class="form-control me-2" id="inputBuscar" type="search" placeholder="buscar en tienda" aria-label="Search">
-                            <button class="btn btn-success" id="btnBuscar">Buscar</button>
-                        </form>
-                    </div>
+        <div class="container">
+            <section>
+                <div class="d-flex justify-content-center">
+                    <img src="img/logo_steam.svg" class="w-25 my-5" alt="Steam">
                 </div>
-                <!-- Destacado -->
-                <article id="destacado">
-
-                </article>
+                <hr class="text-light">
             </section>
-            <!--titulo-->
-            <section class="pt-3">
+            <section>
                 <div>
-                    <hr class="hrs">
-                    <h2 class="text-light">Categorias</h2>
-                    <hr class="hrs">
+                    <h3 class="text-center text-light mb-5 my-5">Administracion de juegos</h3>
+                </div>
+                <div class="botonAgregar">
+                    <button class="btn btn-success w-25" id='btnAgregar'>Agregar</button>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="text-light">
+                                <th scope="col">#</th>
+                                <th scope="col">Nombre del juego</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Publicado</th>
+                                <th scope="col">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id='tablaJuegos'>
+
+                        </tbody>
+                    </table>
                 </div>
             </section>
-            <!-- Carousel 1 de juegos -->
-            <section class="container">
-                <article class="row">
-                    <!--id="manejo"-->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Carreras</h3>
-                            <div class="indicadores" id="indicadores">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel">
-                                <div class="carusel" id="manejo">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Carousel 2 de juegos -->
-            <section class="container">
-                <article class="row">
-                    <!-- id="disparos" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Acción</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel1')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel1">
-                                <div class="carusel" id="disparos">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel1')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Carousel 3 de juegos -->
-            <section>
-                <article class="row">
-                    <!-- id="historia" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Historia</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel2')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel2">
-                                <div class="carusel" id="historia">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel2')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Carousel 4 de juegos -->
-            <section>
-                <article class="row">
-                    <!-- id="deportes" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Deportes</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel3')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel3">
-                                <div class="carusel" id="deportes">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel3')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Final de seccion juegos -->
-        </section>
+        </div>
     </main>
+    <!--Modal de administración-->
+    <div class="modal" tabindex="-1" id="modalJuegos">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Administracion de juegos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formJuegos" onsubmit="guardarDatos(event)">
+                        <div class="mb-3">
+                            <label class="form-label">Codigo</label>
+                            <input type="number" id="codigo" class="form-control" placeholder="1">
+                            <div class="invalid-feedback">
+                                Debe ingresar un codigo correcto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de juego</label>
+                            <input type="name" id="nombreDeJuego" class="form-control" placeholder="Rocket League">
+                            <div class="invalid-feedback">
+                                Debe ingresar un nombre de juego correcto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria</label>
+                            <select id="categoria" class="form-control">
+                        <option></option>
+                        <option>Carreras</option>
+                        <option>Acción</option>
+                        <option>Historia</option>
+                        <option>Deportes</option>
+                    </select>
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoria correcta.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea row="3" class="form-control" id="descripcion"></textarea>
+                            <div class="invalid-feedback">
+                                Debe ingresar una descripcion correcta.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen #1</label>
+                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagen1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen #2</label>
+                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagen2">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Precio</label>
+                            <input type="number" class="form-control" placeholder="ingrese el precio" id="precio">
+                            <div class="invalid-feedback">
+                                Debe ingresar un precio correcto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">URL</label>
+                            <input type="text" class="form-control" placeholder="ingrese el URL" id="url">
+                            <div class="invalid-feedback">
+                                Debe ingresar un URL correcto.
+                            </div>
+                        </div>
+                        <button class="btn btn-success w-100" type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -248,17 +243,17 @@
                         <hr class="hrs">
                     </div>
                     <div class="modal-body text-light">
-                        <form class="px-4 py-3" onsubmit="login(event)">
+                        <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label class="form-label">Usuario</label>
+                                <label  class="form-label">Usuario</label>
                                 <input type="text" class="form-control" id="user" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" placeholder="Contraseña" onblur="validarContraseña(this)" required>
+                                <label  class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
                                 </div>
@@ -324,7 +319,6 @@
         </div>
     </div>
     <!-- Fin de modal -->
-    <!--Footer-->
     <footer class="container-fluid text-dark pt-3">
         <section class="row align-items-center text-center">
             <article class="col-sm-12 col-md-4">
@@ -332,35 +326,32 @@
                     <li><a href="index.html" class="text-light">Inicio</a></li>
                     <li><a href="nosotros.html" class="text-light">Acerca de Nosotros</a></li>
                     <li><a href="contacto.html" class="text-light">Contacto</a></li>
-                    <li><a href="#modalRegistro" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Registrarse</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Ingresar</a></li>
                 </ul>
             </article>
             <article class="col-sm-12 col-md-4 align-items-center text-light">
                 <p>&copy; Todos los derechos reservados.</p>
             </article>
             <article class="col-sm-12 col-md-4 pt-2">
-                <h4 class="lead text-light">Redes Sociales</h4>
+                <h4 class="lead text-light" onclick="cargarInfo()">Redes Sociales</h4>
                 <div class="row">
                     <div class="col-sm-12">
-                        <a href="https://www.facebook.com/Steam/" class="text-light"><i
-                                class="fab fa-facebook-square fa-2x m-2"></i></a>
-                        <a href="http://twitter.com/steam?lang=es" class="text-light" target="_blank"><i
+                        <a href="#" class="text-light"><i class="fab fa-facebook-square fa-2x m-2"></i></a>
+                        <a href="#" class="text-light" target="_blank"><i
                                 class="fab fa-twitter-square fa-2x m-2"></i></a>
-                        <a href="https://www.instagram.com/steam_games_official/" class="text-light"><i
-                                class="fab fa-instagram-square fa-2x m-2"></i></a>
-                        <a href="https://www.youtube.com/watch?v=tIs3zfTkho8" class="text-light"><i
-                                class="fab fa-youtube-square fa-2x m-2"></i></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-instagram-square fa-2x m-2"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube-square fa-2x m-2"></i></i></a>
                     </div>
                 </div>
             </article>
         </section>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/admin.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="login.js"></script>
     <script src="js/verificador.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/carrusel.js"></script>
 </body>
 
 </html>

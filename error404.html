@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
-    <title>Steam</title>
+    <title>Página no encontrada 404</title>
 </head>
 
 <body>
     <header>
+        <!--Navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand maxwidthlogo text-center" href="index.html"><img src="img/logo_steam.svg" alt="Logo Epic Steam" class="img-fluid w-50" style="width: 356px; height: 89px;"></a>
@@ -25,8 +26,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-                        <li class="nav-item mx-2">
-                            <a class="nav-link active" href="index.html">
+                        <li class="nav-item active mx-2">
+                            <a class="nav-link" href="index.html">
                                 <i class="fas fa-home fa-x"></i>
                                 <div>Inicio</div>
                             </a>
@@ -66,116 +67,20 @@
             </div>
         </nav>
     </header>
-    <main>
-        <section class="container pb-5">
-            <section class="pt-3 container">
-                <div class="lead text-light d-flex justify-content-between my-3">
-                    <h3>Destacado y recomendado</h3>
-                    <div class="p-1 rounded">
-                        <form class="d-flex">
-                            <input class="form-control me-2" id="inputBuscar" type="search" placeholder="buscar en tienda" aria-label="Search">
-                            <button class="btn btn-success" id="btnBuscar">Buscar</button>
-                        </form>
+    <!--Se sugiere no agregar la clase d-flex al main ya que ocasiona problemas de carácter responsive en diferentes resoluciones-->
+    <main class="fondo align-items-center justify-content-center">
+        <section>
+            <article>
+                <div class="container contenedor404 text-light d-flex">
+                    <div class="mt-5 ms-auto">
+                        <h1 class="display-1">ERROR 404</h1>
+                        <h2 class="mt-3">Bueno, esto es vergonzoso...</h2>
+                        <p class="mt-3">Vamos a seguir trabajando duro para que la próxima vez encuentres lo que estás buscando.</p>
+                        <img class="mt-3" src="img/footerLogo_valve_new.png">
                     </div>
+                    <img class="ms-auto" src="img/GordonFreeman.png">
                 </div>
-                <!-- Destacado -->
-                <article id="destacado">
-
-                </article>
-            </section>
-            <!--titulo-->
-            <section class="pt-3">
-                <div>
-                    <hr class="hrs">
-                    <h2 class="text-light">Categorias</h2>
-                    <hr class="hrs">
-                </div>
-            </section>
-            <!-- Carousel 1 de juegos -->
-            <section class="container">
-                <article class="row">
-                    <!--id="manejo"-->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Carreras</h3>
-                            <div class="indicadores" id="indicadores">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel">
-                                <div class="carusel" id="manejo">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Carousel 2 de juegos -->
-            <section class="container">
-                <article class="row">
-                    <!-- id="disparos" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Acción</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel1')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel1">
-                                <div class="carusel" id="disparos">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel1')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Carousel 3 de juegos -->
-            <section>
-                <article class="row">
-                    <!-- id="historia" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Historia</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel2')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel2">
-                                <div class="carusel" id="historia">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel2')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Carousel 4 de juegos -->
-            <section>
-                <article class="row">
-                    <!-- id="deportes" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Deportes</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel3')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel3">
-                                <div class="carusel" id="deportes">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel3')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Final de seccion juegos -->
+            </article>
         </section>
     </main>
     <!--Modal de registro-->
@@ -250,15 +155,15 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3" onsubmit="login(event)">
                             <div class="mb-3">
-                                <label class="form-label">Usuario</label>
+                                <label  class="form-label">Usuario</label>
                                 <input type="text" class="form-control" id="user" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" placeholder="Contraseña" onblur="validarContraseña(this)" required>
+                                <label  class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
                                 </div>
@@ -332,7 +237,7 @@
                     <li><a href="index.html" class="text-light">Inicio</a></li>
                     <li><a href="nosotros.html" class="text-light">Acerca de Nosotros</a></li>
                     <li><a href="contacto.html" class="text-light">Contacto</a></li>
-                    <li><a href="#modalRegistro" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Registrarse</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Ingresar</a></li>
                 </ul>
             </article>
             <article class="col-sm-12 col-md-4 align-items-center text-light">
@@ -356,11 +261,10 @@
         </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
     <script src="js/contacto.js"></script>
-    <script src="js/verificador.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/carrusel.js"></script>
+    <script src="js/verificador.js"></script>
 </body>
+
 
 </html>

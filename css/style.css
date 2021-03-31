@@ -1,23 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap');
+* {
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.fondo {
+    background-image: url("/img/City17.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+main {
+    min-height: 100vh;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background: rgb(25,64,90);
+    background: linear-gradient(180deg, rgba(25,64,90,1) 0%, rgba(14,38,54,1) 49%, rgba(14,38,54,1) 100%);
+=======
+>>>>>>> 0523938744c08f2da6dfc01207d24484d1021f5d
+}
+
 .lista {
     list-style: none;
     padding: 0;
 }
 
-main {
-    margin-top: 110px;
-    min-height: 100vh;
 <<<<<<< HEAD
-    background: rgb(25,64,90);
-    background: linear-gradient(180deg, rgba(25,64,90,1) 0%, rgba(14,38,54,1) 49%, rgba(14,38,54,1) 100%);
-}
-
-nav{
-    background-color: #171a21;
-}
-
 footer{
     background-color: #1c3a50;
 =======
+=======
+body {
+    margin-top: 110px;
+>>>>>>> 0523938744c08f2da6dfc01207d24484d1021f5d
     background: rgb(25, 64, 90);
     background: linear-gradient(180deg, rgba(25, 64, 90, 1) 0%, rgba(14, 38, 54, 1) 49%, rgba(14, 38, 54, 1) 100%);
 }
@@ -28,9 +43,345 @@ nav {
 
 footer {
     background: #171a21;
+<<<<<<< HEAD
 >>>>>>> 8cde3f599dd0fd421852a1d0acd12ab29ae48de6
+=======
+>>>>>>> 0523938744c08f2da6dfc01207d24484d1021f5d
 }
 
-.botonAgregar{
-    margin-left: 1000px;
+textarea {
+    resize: none;
+}
+
+#particles-js {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -1;
+}
+
+.botonAgregar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.bg-destacado {
+    background-color: #0a141d;
+}
+
+.bg-search{
+    background-color: rgba(31, 39, 51, 0.5);
+}
+
+.bo-destacado {
+    border-radius: 75%;
+}
+
+.hrs {
+    color: azure;
+}
+
+.ml {
+    margin-left: 70px;
+}
+
+.fuenteDetalleSmall {
+    font-size: 87%;
+}
+
+.fuenteDetalleColor1 {
+    color: #556772;
+}
+
+.fuenteDetalleColor2 {
+    color: #66c0f4;
+}
+
+.fuenteDetalleColor3 {
+    color: #8f98a0;
+}
+
+.textLink {
+    text-decoration: none;
+    color: #8f98a0;
+}
+
+.textLink:hover {
+    text-decoration: none;
+    color: #f5f5f5;
+}
+
+.fuenteDetalleLarge {
+    font-size: 170%;
+    font-weight: bold;
+}
+
+.bg-card {
+    background: rgb(43, 59, 74);
+    background: linear-gradient(90deg, rgba(43, 59, 74, 1) 0%, rgba(86, 100, 115, 1) 91%);
+    height: 60px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.boton-comprar {
+    background: rgb(117, 176, 34);
+    background: linear-gradient(90deg, rgba(117, 176, 34, 1) 0%, rgba(88, 138, 27, 1) 69%);
+    color: #d2efa9;
+    height: 34px;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.boton-comprar:hover {
+    background: rgb(152, 229, 43);
+    background: linear-gradient(90deg, rgba(152, 229, 43, 1) 0%, rgba(122, 192, 36, 1) 69%);
+    color: white;
+    font-weight: bold;
+}
+
+.plataformaCompra {
+    background: #0a141d;
+    width: max-content;
+    margin-left: 70%;
+    border-radius: 3px;
+}
+
+.fondoTabla {
+    background: #112e41;
+}
+
+.textos {
+    text-align: justify;
+}
+
+.plataformaContrato {
+    background: rgb(78, 74, 63);
+    background: linear-gradient(90deg, rgba(78, 74, 63, 1) 4%, rgba(114, 104, 80, 1) 74%);
+    color: #e1c48a;
+}
+
+.bg-modal {
+    background: rgb(34, 34, 34);
+    background: linear-gradient(90deg, rgba(34, 34, 34, 0.5410539215686274) 0%, rgba(31, 31, 31, 1) 35%, rgba(22, 22, 22, 1) 100%);
+}
+
+.persona {
+    margin: 40px;
+}
+
+.persona:nth-child(odd) {
+    background-color: #00DBDE;
+    background-image: linear-gradient(90deg, #00DBDE 0%, #171a21 73%);
+}
+
+.persona:nth-child(even) {
+    background-color: #171a21;
+    background-image: linear-gradient(90deg, #171a21 28%, #00DBDE 73%);
+}
+
+.fotopers {
+    border-radius: 50%;
+}
+
+.video {
+    width: 100%;
+    height: 45%;
+}
+
+.intro {
+    background-color: #0a141d;
+    height: 100%;
+}
+
+.contenedor404 {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6951914554884453) 0%, rgba(0, 0, 0, 0.8436508392419468) 76%);
+}
+
+.buttonCheckbox {
+    transform: scale(2.0);
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.buttonCheckboxModal {
+    transform: scale(1.5);
+}
+
+
+/* Controles del carusel */
+
+.titulo-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.titulo-controles .indicadores button,
+.titulo-controles .indicadores1 button {
+    background: white;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.titulo-controles .indicadores button:hover,
+.titulo-controles .indicadores button.active,
+.titulo-controles .indicadores1 button:hover,
+.titulo-controles .indicadores1 button.active {
+    background: green;
+}
+
+
+/* Contenedor principal y flechas del carusel */
+
+.categoria-carusel {
+    margin-bottom: 30px;
+}
+
+.categoria-carusel .contenedor {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.categoria-carusel .contenedor .flecha-izquierda,
+.categoria-carusel .contenedor .flecha-derecha {
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 45px;
+    height: 35%;
+    line-height: 40px;
+    width: 50px;
+    color: white;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.categoria-carusel .contenedor .flecha-izquierda:hover,
+.categoria-carusel .contenedor .flecha-derecha:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+/* Contenedor del carusel , imagenes */
+
+.categoria-carusel .contenedor-carusel {
+    width: 100%;
+    padding: 20px 0px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.categoria-carusel .contenedor-carusel .carusel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.categoria-carusel .contenedor-carusel .carusel .game {
+    min-width: 25%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+
+/* Cambiar con media cuery para que cuando se haga la pagina mas chicas muestre menos img 
+.categoria-carusel .contenedor-carusel .carusel .game{
+        min-width: X%; 
+    }
+*/
+
+.categoria-carusel .contenedor-carusel .carusel .game .hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.categoria-carusel .contenedor-carusel .carusel .game img {
+    width: 100%;
+    vertical-align: top;
+}
+
+
+/* ====> Por buenas prácticas, la estructura debe dejar a las media queries al final de la hoja <====
+   ====>            Por favor agregar arríba cualquier regla de CSS que se necesite             <==== */
+
+@media (max-width: 1400px) and (min-width: 1200px) {
+    .plataformaCompra {
+        margin-left: 65%;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 992px) {
+    .plataformaCompra {
+        margin-left: 60%;
+    }
+    .intro {
+        height: 540px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .persona:nth-child(even) {
+        background-image: linear-gradient(to bottom, #171a21 28%, #00DBDE 73%);
+    }
+    .persona:nth-child(odd) {
+        background-image: linear-gradient(to top, #00DBDE 0%, #171a21 73%);
+    }
+    .persona img {
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 992px) {
+    .fuenteDetalleLarge {
+        font-size: 140%;
+    }
+    .plataformaCompra {
+        margin-left: 60%;
+    }
+    .contenedorFlexible {
+        display: flex;
+        flex-direction: column;
+    }
+    .intro {
+        height: 800px;
+    }
+    .game {
+        min-width: 34% !important;
+    }
+}
+
+@media (max-width: 769px) {
+    .fuenteDetalleLarge {
+        font-size: 110%;
+    }
+    .fuenteDetalleSmall2 {
+        font-size: 70%;
+    }
+    .plataformaCompra {
+        margin-left: 60%;
+        font-size: 70%;
+    }
+    .intro {
+        height: 620px;
+    }
+    .game {
+        min-width: 50%!important;
+    }
+}
+
+@media (max-width: 520px) {
+    .plataformaCompra {
+        margin-left: 5%;
+        font-size: 70%;
+    }
+    .game {
+        min-width: 100% !important;
+    }
 }

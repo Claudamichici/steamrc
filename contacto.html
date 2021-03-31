@@ -10,9 +10,15 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
-    <title>Steam</title>
+    <title>¡Contáctanos!</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_vLdnnrwRLmZCdL5WgsMjT");
+        })();
+    </script>
 </head>
 
 <body>
@@ -26,7 +32,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                         <li class="nav-item mx-2">
-                            <a class="nav-link active" href="index.html">
+                            <a class="nav-link" href="index.html">
                                 <i class="fas fa-home fa-x"></i>
                                 <div>Inicio</div>
                             </a>
@@ -37,7 +43,7 @@
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="contacto.html"><i class="far fa-comments fa-x"></i>
+                            <a class="nav-link active" href="contacto.html"><i class="far fa-comments fa-x"></i>
                                 <div>Contacto</div>
                             </a>
                         </li>
@@ -66,151 +72,94 @@
             </div>
         </nav>
     </header>
-    <main>
-        <section class="container pb-5">
-            <section class="pt-3 container row">
-                    <div class="lead text-light d-flex justify-content-between my-3">
-                        <h3>Destacado y recomendado</h3>
-                    </div>
-                    <div class="col-md-9 col-sm-12">
-                    <!-- Destacado -->
-                    <article id="destacado">
+    <main class="position-relative">
+        <div id="particles-js"></div>
+        <section class="container text-light mt-5 position-relative">
+            <section class="row infocontacto mt-5">
+                <section class="col-sm-12 col-md-4 text-center">
+                    <article class="my-5">
+                        <span><i class="fas fa-user-circle fa-5x"></i></span>
+                        <h1>01/ Soporte<br>de Steam</h1>
+                        <p>Somos muy accesibles y nos encantaría hablar contigo. No dudes en llamarnos, enviarnos un correo electrónico, enviarnos un Tweet o simplemente completar el formulario de consulta.
+                        </p>
                     </article>
-                </div>
-                <div class="col-md-3 col-sm-12 my-3">
-                    <div class="p-1 rounded ">
-                        <div class="bg-search rounded p-3">
-                            <h4 class="text-light p-2">Buscador de juegos</h4>
-                            <input type="text" class="form-control me-2 mb-2" id="formulario" placeholder="Nombre del juego">
-                            <button class="btn btn-success m-2" id="boton">Buscar</button>
-                            <ul id="resultados" class="text-light"></ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!--titulo-->
-            <section class="pt-3">
-                <div>
-                    <hr class="hrs">
-                    <h2 class="text-light">Categorias</h2>
-                    <hr class="hrs">
-                </div>
-            </section>
-            <!-- Carousel 1 de juegos -->
-            <section class="container">
-                <article class="row">
-                    <!--id="manejo"-->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Carreras</h3>
-                            <div class="indicadores" id="indicadores">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel">
-                                <div class="carusel" id="manejo">
+                    <article>
+                        <ul class="lista">
+                            <li class="lead"><a style="text-decoration:none" href="http://" class="text-light"><i
+                                        class="fas fa-envelope"></i> info@steamrollingcode.com</a></li>
+                            <li class="lead"><a style="text-decoration:none" href="http://" class="text-light"><i
+                                        class="fas fa-mobile-alt"></i> +54(381) 0123456789</a></li>
+                            <li class="lead"><a style="text-decoration:none" href="http://twitter.com/steam?lang=es" class="text-light"><i class="fab fa-twitter"></i> @Steam</a></li>
+                        </ul>
+                    </article>
+                </section>
+                <section class="col-sm-12 col-md-8 my-5">
+                    <article class="ms-3">
+                        <h1>02/ Envianos un mensaje</h1>
+                        <form onsubmit="validarGeneral(event)" id="formConsulta">
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Nombre y Apellido <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" onblur="campoRequerido(this)" required>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un nombre y apellido válido
                                 </div>
                             </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Carousel 2 de juegos -->
-            <section class="container">
-                <article class="row">
-                    <!-- id="disparos" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Acción</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel1')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel1">
-                                <div class="carusel" id="disparos">
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Teléfono <span class="text-danger">*</span>
+                                </label>
+                                <input type="number" class="form-control" id="telefono" placeholder="38101234567" onblur="validarNumeros(this)" required>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un número teléfono
                                 </div>
                             </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel1')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    Email <span class="text-danger">*</span>
+                                </label>
+                                <input type="email" placeholder="juanperez@gmail.com" class="form-control" id='email' onblur="validarEmail(this)" required>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un mail válido
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">
+                                    ¿Cómo podemos ayudarte? <span class="text-danger">*</span>
+                                </label>
+                                <textarea placeholder="Ingrese su consulta aqui" rows="5" class="form-control" id="consulta" onblur="validarConsulta(this)" required></textarea>
+                                <div class="invalid-feedback">
+                                    Debe ingresar una consulta de al menos 15 caracteres
+                                </div>
+                            </div>
+                            <div class="my-3">
+                                <p>Lea nuestra <a href="https://store.steampowered.com/privacy_agreement/?snr=1_44_44_">Política de privacidad</a> para saber cómo usamos su información.</p>
+                            </div>
+                            <div class="my-3">
+                                <div class="form-check">
+                                    <input type="checkbox" id="terminos" class="form-check-input">
+                                    <label class="form-check-label">He leído y acepto los términos descritos en la Política de privacidad.</label>
+                                    <div class="invalid-feedback">
+                                        Debe aceptar términos y condiciones
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-success" type="submit">Enviar</button>
+                        </form>
+                    </article>
+                </section>
             </section>
-            <!-- Carousel 3 de juegos -->
             <section>
-                <article class="row">
-                    <!-- id="historia" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Historia</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel2')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel2">
-                                <div class="carusel" id="historia">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel2')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
+                <h1>03/ <i class="fas fa-map-marker-alt"></i> ¡Aquí te esperamos sí necesitas ayuda más personalizada!
+                </h1>
+                <p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102370777529!2d-65.2093904854509!3d-26.836696096500635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1ses!2sar!4v1616006403325!5m2!1ses!2sar"
+                        class="w-100" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </p>
             </section>
-            <!-- Carousel 4 de juegos -->
-            <section>
-                <article class="row">
-                    <!-- id="deportes" -->
-                    <div class="categoria-carusel py-3">
-                        <div class="titulo-controles">
-                            <h3 class="text-center text-light">Deportes</h3>
-                            <div class="indicadores1" id="indicadores1">
-                            </div>
-                        </div>
-                        <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel3')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel" id="contenedor-carusel3">
-                                <div class="carusel" id="deportes">
-                                </div>
-                            </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel3')"><i class="fas fa-angle-right"></i></button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <!-- Final de seccion juegos -->
         </section>
     </main>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <footer class="container-fluid pt-3">
-=======
-    <footer class="container-fluid text-dark pt-3">
->>>>>>> 8cde3f599dd0fd421852a1d0acd12ab29ae48de6
-        <section class="row align-items-center text-center">
-            <article class="col-sm-12 col-md-4">
-                <ul class="lista">
-                    <li><a href="#" class="text-light">Inicio</a></li>
-<<<<<<< HEAD
-                    <li><a href="#" class="text-light">Acerca de nosotros</a></li>
-=======
-                    <li><a href="#" class="text-light">Acerca de Nosotros</a></li>
->>>>>>> 8cde3f599dd0fd421852a1d0acd12ab29ae48de6
-                    <li><a href="#" class="text-light">Contacto</a></li>
-                    <li><a href="#" class="text-light">Suscribirse</a></li>
-                </ul>
-            </article>
-<<<<<<< HEAD
-            <article class="col-sm-12 col-md-4 align-items-center">
-                <p class="text-light">&copy; Todos los derechos reservados.</p>
-            </article>
-            <article class="col-sm-12 col-md-4 pt-2">
-                <h4 class="lead">Redes Sociales</h4>
-                <div class="row text-light">
-=======
-=======
     <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -283,15 +232,15 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3" onsubmit="login(event)">
                             <div class="mb-3">
-                                <label class="form-label">Usuario</label>
+                                <label  class="form-label">Usuario</label>
                                 <input type="text" class="form-control" id="user" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password" placeholder="Contraseña" onblur="validarContraseña(this)" required>
+                                <label  class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
                                 </div>
@@ -357,8 +306,7 @@
         </div>
     </div>
     <!-- Fin de modal -->
-    <!--Footer-->
-    <footer class="container-fluid text-dark pt-3">
+    <footer class="container-fluid pt-3">
         <section class="row align-items-center text-center">
             <article class="col-sm-12 col-md-4">
                 <ul class="lista">
@@ -368,17 +316,12 @@
                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Ingresar</a></li>
                 </ul>
             </article>
->>>>>>> 0523938744c08f2da6dfc01207d24484d1021f5d
             <article class="col-sm-12 col-md-4 align-items-center text-light">
                 <p>&copy; Todos los derechos reservados.</p>
             </article>
             <article class="col-sm-12 col-md-4 pt-2">
                 <h4 class="lead text-light">Redes Sociales</h4>
                 <div class="row">
-<<<<<<< HEAD
->>>>>>> 8cde3f599dd0fd421852a1d0acd12ab29ae48de6
-=======
->>>>>>> 0523938744c08f2da6dfc01207d24484d1021f5d
                     <div class="col-sm-12">
                         <a href="https://www.facebook.com/Steam/" class="text-light"><i
                                 class="fab fa-facebook-square fa-2x m-2"></i></a>
@@ -394,11 +337,11 @@
         </section>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/particles.js"></script>
     <script src="js/verificador.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/carruselySearch.js"></script>
 </body>
 
 </html>

@@ -10,8 +10,9 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
-    <title>Steam</title>
+    <title>Administrar productos</title>
 </head>
 
 <body>
@@ -31,28 +32,33 @@
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#"><i class="fas fa-users fa-x"></i>
+                            <a class="nav-link" href="nosotros.html"><i class="fas fa-users fa-x"></i>
                                 <div>Nosotros</div>
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#"><i class="far fa-comments fa-x"></i>
+                            <a class="nav-link" href="contacto.html"><i class="far fa-comments fa-x"></i>
                                 <div>Contacto</div>
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#modalSuscribirse" class="btn btn-light my-2" data-toggle="modal"><i class="far fa-bell fa-x"></i>
-                                <div>Suscripción</div>
+                            <a class="nav-link" id="modalRegistro" href="#modalRegistro" class="btn btn-light my-2" data-bs-toggle="modal" data-bs-target="#registromodal"><i class="far fa-bell fa-x"></i>
+                                <div>Registro</div>
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#"><i class="fas fa-sign-in-alt fa-x"></i>
+                            <a class="nav-link" id="modalIngresar" href="#modalIngresar" data-bs-toggle="modal" data-bs-target="#loginmodal"><i class="fas fa-sign-in-alt fa-x"></i>
                                 <div>Ingresar</div>
                             </a>
                         </li>
-                        <li class="nav-item mx-2 d-none">
-                            <a class="nav-link" href="#"><i class="fas fa-user-shield fa-x"></i>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active d-none" href="admin.html" id="adminNavbar"><i class="fas fa-user-shield fa-x"></i>
                                 <div>Administración</div>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link d-none" href="index.html" onclick="cerrarSesion()" id="cerrarSesion"><i class="fas fa-times fa-x"></i>
+                                <div>Cerrar Sesion</div>
                             </a>
                         </li>
                     </ul>
@@ -73,14 +79,14 @@
                     <h3 class="text-center text-light mb-5 my-5">Administracion de juegos</h3>
                 </div>
                 <div class="botonAgregar">
-                    <button class="btn btn-outline-light" id='btnAgregar' data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar</button>
+                    <button class="btn btn-success w-25" id='btnAgregar'>Agregar</button>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr class="text-light">
                                 <th scope="col">#</th>
-                                <th scope="col">Nombre de juego</th>
+                                <th scope="col">Nombre del juego</th>
                                 <th scope="col">Categoria</th>
                                 <th scope="col">Descripcion</th>
                                 <th scope="col">Publicado</th>
@@ -88,26 +94,246 @@
                             </tr>
                         </thead>
                         <tbody id='tablaJuegos'>
+
                         </tbody>
                     </table>
                 </div>
             </section>
+        </div>
     </main>
+    <!--Modal de administración-->
+    <div class="modal" tabindex="-1" id="modalJuegos">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Administracion de juegos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formJuegos" onsubmit="guardarDatos(event)">
+                        <div class="mb-3">
+                            <label class="form-label">Codigo</label>
+                            <input type="number" id="codigo" class="form-control" placeholder="1">
+                            <div class="invalid-feedback">
+                                Debe ingresar un codigo correcto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de juego</label>
+                            <input type="name" id="nombreDeJuego" class="form-control" placeholder="Rocket League">
+                            <div class="invalid-feedback">
+                                Debe ingresar un nombre de juego correcto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoria</label>
+                            <select id="categoria" class="form-control">
+                        <option></option>
+                        <option>Carreras</option>
+                        <option>Acción</option>
+                        <option>Historia</option>
+                        <option>Deportes</option>
+                    </select>
+                            <div class="invalid-feedback">
+                                Debe ingresar una categoria correcta.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea row="3" class="form-control" id="descripcion"></textarea>
+                            <div class="invalid-feedback">
+                                Debe ingresar una descripcion correcta.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen #1</label>
+                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagen1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen #2</label>
+                            <input type="text" class="form-control" placeholder="agregar una imagen" id="imagen2">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Precio</label>
+                            <input type="number" class="form-control" placeholder="ingrese el precio" id="precio">
+                            <div class="invalid-feedback">
+                                Debe ingresar un precio correcto.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">URL</label>
+                            <input type="text" class="form-control" placeholder="ingrese el URL" id="url">
+                            <div class="invalid-feedback">
+                                Debe ingresar un URL correcto.
+                            </div>
+                        </div>
+                        <button class="btn btn-success w-100" type="submit">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal de registro-->
+    <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-modal p-4">
+                <div class="text-light d-flex flex-column">
+                    <div>
+                        <img src="img/logo_steam.svg" alt="Logo steam" class="w-25">
+                        <h4 class="text-center">Registro</h4>
+                        <hr class="hrs">
+                    </div>
+                    <div class="modal-body text-light">
+                        <form class="px-4 py-3" onsubmit="validarReg(event)">
+                            <div class="mb-3">
+                                <label class="form-label">Correo*</label>
+                                <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un mail válido.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Usuario*</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="XxXDarkGamer1XxX" onblur="validarUsuario (this)" required>
+                                <div class="invalid-feedback">
+                                    El usuario debe tener entre 6 a 16 caracteres.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Contraseña*</label>
+                                <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" onblur="validarContraseña(this)">
+                                <div class="invalid-feedback">
+                                    El usuario debe tener entre 8 a 16 números, letras, mayúsculas o minúsculas.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="terminos">
+                                    <label class="form-check-label" for="dropdownCheck">
+                                                ¿Estás de acuerdo con nuestras condiciones de uso?*
+                                                </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Registrate</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex">
+                            <div>
+                                <img src="img/footerLogo_valve_new.png" alt="Logo-de-valve" class="w-100">
+                            </div>
+                            <p>© 2021 Valve Corporation. Todos los derechos reservados. Todos los precios incluyen IVA (donde sea aplicable).</p>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-end">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal de ingreso-->
+    <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-modal p-4">
+                <div class="text-light d-flex flex-column">
+                    <div>
+                        <img src="img/logo_steam.svg" alt="Logo steam" class="w-25">
+                        <h4 class="text-center">Ingreso</h4>
+                        <hr class="hrs">
+                    </div>
+                    <div class="modal-body text-light">
+                        <form class="px-4 py-3">
+                            <div class="mb-3">
+                                <label  class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="user" placeholder="Usuario" onblur="validarUsuario (this)" required>
+                                <div class="invalid-feedback">
+                                    Usuario incorrecto!.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label  class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña " onblur="validarContraseña(this)" required>
+                                <div class="invalid-feedback">
+                                    Contraseña incorrecta!.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success" id="btnAdmin">Ingresar</button>
+                        </form>
+                        <hr class="hrs">
+                        <div><a class="hobmodales text-light" href="#" data-bs-toggle="modal" data-bs-target="#registromodal" data-bs-dismiss="modal">¡Registrate!</a></div>
+                        <div class="py-2"><a class="text-light hobmodales" href="#" data-bs-toggle="modal" data-bs-target="#recuperar" data-bs-dismiss="modal">¿Olvidaste tu contraseña?</a></div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex">
+                            <div>
+                                <img src="img/footerLogo_valve_new.png" alt="Logo-de-valve" class="w-100">
+                            </div>
+                            <p>© 2021 Valve Corporation. Todos los derechos reservados. Todos los precios incluyen IVA (donde sea aplicable).</p>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-end">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal de recuperar contraseña-->
+    <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-modal p-4">
+                <div class="text-light d-flex flex-column">
+                    <div>
+                        <img src="img/logo_steam.svg" alt="Logo steam" class="w-25">
+                        <h4 class="text-center">Ingreso</h4>
+                        <hr class="hrs">
+                    </div>
+                    <div class="modal-body text-light">
+                        <form class="px-4 py-3">
+                            <div class="mb-3">
+                                <div>
+                                    <p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p>
+                                </div>
+                                <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
+                                <div class="invalid-feedback">
+                                    Debe ingresar un mail válido.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success">Recuperar</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex">
+                            <div>
+                                <img src="img/footerLogo_valve_new.png" alt="Logo-de-valve" class="w-100">
+                            </div>
+                            <p>© 2021 Valve Corporation. Todos los derechos reservados. Todos los precios incluyen IVA (donde sea aplicable).</p>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-end">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin de modal -->
     <footer class="container-fluid text-dark pt-3">
         <section class="row align-items-center text-center">
             <article class="col-sm-12 col-md-4">
                 <ul class="lista">
-                    <li><a href="#" class="text-light">Inicio</a></li>
-                    <li><a href="#" class="text-light">Acerca de Nosotros</a></li>
-                    <li><a href="#" class="text-light">Contacto</a></li>
-                    <li><a href="#" class="text-light">Suscribirse</a></li>
+                    <li><a href="index.html" class="text-light">Inicio</a></li>
+                    <li><a href="nosotros.html" class="text-light">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html" class="text-light">Contacto</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Ingresar</a></li>
                 </ul>
             </article>
             <article class="col-sm-12 col-md-4 align-items-center text-light">
                 <p>&copy; Todos los derechos reservados.</p>
             </article>
             <article class="col-sm-12 col-md-4 pt-2">
-                <h4 class="lead text-light">Redes Sociales</h4>
+                <h4 class="lead text-light" onclick="cargarInfo()">Redes Sociales</h4>
                 <div class="row">
                     <div class="col-sm-12">
                         <a href="#" class="text-light"><i class="fab fa-facebook-square fa-2x m-2"></i></a>
@@ -122,7 +348,10 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/admin.js"></script>
+    <script src="js/contacto.js"></script>
+    <script src="login.js"></script>
+    <script src="js/verificador.js"></script>
 </body>
 
 </html>

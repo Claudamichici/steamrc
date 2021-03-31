@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
-    <title>Steam</title>
+    <title>Administrar productos</title>
 </head>
 
 <body>
@@ -89,7 +89,7 @@
                             </tr>
                         </thead>
                         <tbody id='tablaJuegos'>
-                            
+
                         </tbody>
                     </table>
                 </div>
@@ -124,8 +124,8 @@
                             <label class="form-label">Categoria</label>
                             <select id="categoria" class="form-control">
                         <option></option>
-                        <option>Manejo</option>
-                        <option>Disparos</option>
+                        <option>Carreras</option>
+                        <option>Acción</option>
                         <option>Historia</option>
                         <option>Deportes</option>
                     </select>
@@ -168,8 +168,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal 1 -->
-    <!-- Modal -->
+    <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -228,8 +227,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal 2 -->
-    <!-- Modal -->
+    <!--Modal de ingreso-->
     <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -242,15 +240,15 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label  class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario" onblur="validarUsuario (this)" required>
+                                <label class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="user1" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label  class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
                                 </div>
@@ -263,7 +261,7 @@
                                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">Ingresar</button>
+                            <button type="submit" class="btn btn-success" id="btnAdmin">Ingresar</button>
                         </form>
                         <hr class="hrs">
                         <div><a class="hobmodales text-light" href="#" data-bs-toggle="modal" data-bs-target="#registromodal" data-bs-dismiss="modal">¡Registrate!</a></div>
@@ -284,9 +282,7 @@
             </div>
         </div>
     </div>
-    <!-- Fin de modal -->
-    <!-- Modal 3 -->
-    <!-- Modal -->
+    <!--Modal de recuperar contraseña-->
     <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -299,7 +295,9 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <div><p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p></div>
+                                <div>
+                                    <p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p>
+                                </div>
                                 <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un mail válido.
@@ -356,4 +354,5 @@
     <script type="module" src="js/admin.js"></script>
     <script src="js/contacto.js"></script>
 </body>
+
 </html>

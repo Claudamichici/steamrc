@@ -5,10 +5,9 @@ function categoriaManejo(){
         listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
         let manejoJS = document.getElementById('manejo');
         manejoJS.innerHTML = '';
-
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria == "Manejo"){
-            let categoriaHTML = `<div class="px-1 py-1 game"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;
+            let categoriaHTML = `<div class="px-1 py-1 game" id="game"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;
                 manejoJS.innerHTML += categoriaHTML;
             }
         }
@@ -21,10 +20,9 @@ function categoriaDisparos(){
         listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
         let disparosJS = document.getElementById('disparos');
         disparosJS.innerHTML = '';
-
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria == "Disparos"){
-            let categoriaHTML = `<div class="px-1 py-1 game1"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;
+            let categoriaHTML = `<div class="px-1 py-1 game" id="game1"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;
                 disparosJS.innerHTML += categoriaHTML;
             }
         }
@@ -36,14 +34,10 @@ function categoriaHistoria(){
     if(localStorage.length >0){
         listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
         let historiaJS = document.getElementById('historia');
-         historiaJS.innerHTML = '';
-
+        historiaJS.innerHTML = '';
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria == "Historia"){
-
-             let categoriaHTML = `<div class="mx-3 my-4">
-             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
-             </div>`;
+            let categoriaHTML = `<div class="px-1 py-1 game" id="game2"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;;
                 historiaJS.innerHTML += categoriaHTML;
             }
         }
@@ -55,14 +49,10 @@ function categoriaDeportes(){
     if(localStorage.length >0){
         listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
         let deportesJS = document.getElementById('deportes');
-         deportes.innerHTML = '';
-
+        deportes.innerHTML = '';
         for(let i in listaJuegos){
             if(listaJuegos[i].categoria == "Deportes"){
-
-             let categoriaHTML = `<div class="mx-3 my-4">
-             <a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}" class="w-100"></a>
-             </div>`;
+            let categoriaHTML =`<div class="px-1 py-1 game" id="game3"><a href="#" onclick="abrirDetalles(this.id)" id="${listaJuegos[i].codigo}"><img src="img/imgdetalles/${listaJuegos[i].imagen1}" alt="${listaJuegos[i].nombreDeJuego}"></a></div>`;;
                 deportesJS.innerHTML += categoriaHTML;
             }
         }

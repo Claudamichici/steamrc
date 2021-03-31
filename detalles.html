@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
-    <title>Forza Horizon 4 en Steam</title>
+    <title>Monster Hunter World en Steam</title>
 </head>
 
 <body>
@@ -64,12 +64,12 @@
     <main>
         <section class="container pb-5">
             <section class="pt-5">
-                <!--Carousel de imágenes y videos + descripción y detalles del producto: Fin-->
+                <!--Carousel de imágenes y videos + descripción y detalles del producto-->
                 <article id="detallesIndex">
                     <div>
-                        <p class="fuenteDetalleSmall fuenteDetalleColor3"><a href="index.html" class="textLink">Todos los juegos</a> > <a href="index.html" class="textLink">Carreras</a> > <a href="detalles.html" class="textLink">Forza Horizon 4</a></p>
+                        <p class="fuenteDetalleSmall fuenteDetalleColor3"><a href="index.html" class="textLink">Todos los juegos</a> > <a href="index.html" class="textLink">Acción</a> > <a href="detalles.html" class="textLink">Monster Hunter World</a></p>
                     </div>
-                    <h1 class="text-light"><b>Forza Horizon 4</b></h1>
+                    <h1 class="text-light"><b>Monster Hunter World</b></h1>
                     <div class="row intro p-2">
                         <div class="col-lg-8 rounded-start p-1">
                             <div>
@@ -77,10 +77,10 @@
                                     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="false">
                                         <div class="carousel-inner" id="sliderDetalles">
                                             <div class="carousel-item active">
-                                                <img src="img/forza-horizon-4_15.jpg" class="w-100">
+                                                <img src="img/imgdetalles/MonsterHunterWorld.png" class="w-100">
                                             </div>
                                             <div class="carousel-item">
-                                                <img src="img/Forza-horizon4(3).jpg" class="d-block w-100" alt="imagen de autos a alta velocidad">
+                                                <img src="img/imgdetalles/MonsterHunterWorld02.png" class="d-block w-100" alt="imagen de autos a alta velocidad">
                                             </div>
                                         </div>
                                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -97,9 +97,9 @@
                         </div>
                         <div class="col-lg-4 rounded-end row p-1 text-light ms-1">
                             <div>
-                                <iframe class="video" src="https://www.youtube.com/embed/RCRYs7yfeo4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe class="video" src="https://www.youtube.com/embed/OotQrKEqe94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 <div class="mt-2 fuenteDetalleSmall2">
-                                    <p class="fuenteDetalleSmall">Las estaciones dinámicas lo cambian todo en el mejor festival automovilístico del mundo. Ve por cuenta propia o únete a otros equipos para explorar la hermosa e histórica Gran Bretaña en un mundo abierto compartido.</p>
+                                    <p class="fuenteDetalleSmall">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia modi doloremque, magni repellendus consequuntur animi dolorum placeat aspernatur quisquam dolores.</p>
                                     <div class="row mt-2">
                                         <div class="col-6">
                                             <p class="fuenteDetalleSmall fuenteDetalleColor1">RESEÑAS GENERALES:
@@ -125,7 +125,7 @@
                     </div>
                 </article>
             </section>
-            <!--Carousel de imágenes y videos + descripción y detalles del producto: Fin-->
+            <!-- Fin del Carousel de imágenes y videos + descripción y detalles del producto-->
         </section>
         <!--Descripción y botones de compra-->
         <section class="container" id="articuloDetalle">
@@ -180,8 +180,7 @@
             </article>
         </section>
     </main>
-    <!-- Modal 1 -->
-    <!-- Modal -->
+    <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -240,8 +239,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal 2 -->
-    <!-- Modal -->
+    <!--Modal de ingreso-->
     <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -254,15 +252,15 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label  class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario" onblur="validarUsuario (this)" required>
+                                <label class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="user1" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label  class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
                                 </div>
@@ -275,7 +273,7 @@
                                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">Ingresar</button>
+                            <button type="submit" class="btn btn-success" id="btnAdmin">Ingresar</button>
                         </form>
                         <hr class="hrs">
                         <div><a class="hobmodales text-light" href="#" data-bs-toggle="modal" data-bs-target="#registromodal" data-bs-dismiss="modal">¡Registrate!</a></div>
@@ -296,9 +294,7 @@
             </div>
         </div>
     </div>
-    <!-- Fin de modal -->
-    <!-- Modal 3 -->
-    <!-- Modal -->
+    <!--Modal de recuperar contraseña-->
     <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -311,7 +307,9 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <div><p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p></div>
+                                <div>
+                                    <p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p>
+                                </div>
                                 <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un mail válido.

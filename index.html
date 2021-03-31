@@ -107,16 +107,16 @@
                         <div class="categoria-carusel py-3">
                             <div class="titulo-controles">
                                 <h3 class="text-center text-light">Manejo</h3>
-                                <div class="indicadores">
+                                <div class="indicadores" id="indicadores">
                                 </div>
                             </div>
                             <div class="contenedor">
-                                <button role="button" class="flecha-izquierda" onclick="flechaizquierda(this,'contenedor-carusel')"><i class="fas fa-angle-left"></i></button>
+                                <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel')"><i class="fas fa-angle-left"></i></button>
                                 <div class="contenedor-carusel" id="contenedor-carusel">
                                     <div class="carusel" id="manejo">
                                     </div>
                                 </div>
-                                <button role="button" class="flecha-derecha" onclick="flechaderecha(this,'contenedor-carusel')"><i class="fas fa-angle-right"></i></button>
+                                <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel')"><i class="fas fa-angle-right"></i></button>
                             </div>
                         </div>
                     </article>
@@ -128,45 +128,66 @@
                     <div class="categoria-carusel py-3">
                         <div class="titulo-controles">
                             <h3 class="text-center text-light">Disparos</h3>
-                            <div class="indicadores1">
+                            <div class="indicadores1" id="indicadores1">
                             </div>
                         </div>
                         <div class="contenedor">
-                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda(this,'contenedor-carusel1')"><i class="fas fa-angle-left"></i></button>
-                            <div class="contenedor-carusel1" id="contenedor-carusel1" >
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel1')"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel" id="contenedor-carusel1" >
                                 <div class="carusel" id="disparos">
                                 </div>
                             </div>
-                            <button role="button" class="flecha-derecha" onclick="flechaderecha(this,'contenedor-carusel1')"><i class="fas fa-angle-right"></i></button>
+                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel1')"><i class="fas fa-angle-right"></i></button>
                         </div>
                     </div>
                 </article>
             </section>
             <!-- Carousel 3 de juegos -->
             <section>
-                <div class="py-3">
-                    <h4 class="text-center text-light">Historia</h4>
-                </div>
                 <article class="row">
-                    <div class="d-flex justify-content-evenly" id="historia">
+                    <!-- id="historia" -->
+                    <div class="categoria-carusel py-3">
+                        <div class="titulo-controles">
+                            <h3 class="text-center text-light">Historia</h3>
+                            <div class="indicadores1" id="indicadores1">
+                            </div>
+                        </div>
+                        <div class="contenedor">
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel2')"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel" id="contenedor-carusel2" >
+                                <div class="carusel" id="historia">
+                                </div>
+                            </div>
+                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel2')"><i class="fas fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </section>
             <!-- Carousel 4 de juegos -->
             <section>
-                <div class="py-3">
-                    <h4 class="text-center text-light">Deportes</h4>
-                </div>
                 <article class="row">
-                    <div class="d-flex justify-content-evenly" id="deportes">
+                    <!-- id="deportes" -->
+                    <div class="categoria-carusel py-3">
+                        <div class="titulo-controles">
+                            <h3 class="text-center text-light">Deportes</h3>
+                            <div class="indicadores1" id="indicadores1">
+                            </div>
+                        </div>
+                        <div class="contenedor">
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel3')"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel" id="contenedor-carusel3" >
+                                <div class="carusel" id="deportes">
+                                </div>
+                            </div>
+                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel3')"><i class="fas fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </section>
             <!-- Final de seccion juegos -->
         </section>
     </main>
-    <!-- Modal 1 -->
-    <!-- Modal -->
+    <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -225,8 +246,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal 2 -->
-    <!-- Modal -->
+    <!--Modal de ingreso-->
     <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -239,15 +259,15 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label  class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario" onblur="validarUsuario (this)" required>
+                                <label class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="user1" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label  class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
                                 </div>
@@ -260,7 +280,7 @@
                                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">Ingresar</button>
+                            <button type="submit" class="btn btn-success" id="btnAdmin">Ingresar</button>
                         </form>
                         <hr class="hrs">
                         <div><a class="hobmodales text-light" href="#" data-bs-toggle="modal" data-bs-target="#registromodal" data-bs-dismiss="modal">¡Registrate!</a></div>
@@ -281,9 +301,7 @@
             </div>
         </div>
     </div>
-    <!-- Fin de modal -->
-    <!-- Modal 3 -->
-    <!-- Modal -->
+    <!--Modal de recuperar contraseña-->
     <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -296,7 +314,9 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <div><p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p></div>
+                                <div>
+                                    <p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p>
+                                </div>
                                 <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un mail válido.

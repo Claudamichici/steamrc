@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
-    <title>Steam</title>
+    <title>¡Contáctanos!</title>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script type="text/javascript">
@@ -57,7 +57,7 @@
                                 <div>Ingresar</div>
                             </a>
                         </li>
-                        <li class="nav-item mx-2 d-none">
+                        <li id="navAdmin" class="nav-item mx-2 d-none">
                             <a class="nav-link" href="admin.html"><i class="fas fa-user-shield fa-x"></i>
                                 <div>Administración</div>
                             </a>
@@ -98,7 +98,7 @@
                                 </label>
                                 <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" onblur="campoRequerido(this)" required>
                                 <div class="invalid-feedback">
-                                    Debe ingresar un nombre y apellido válido 
+                                    Debe ingresar un nombre y apellido válido
                                 </div>
                             </div>
                             <div class="mb-3">
@@ -154,9 +154,9 @@
                 </p>
             </section>
         </section>
+        <button type="button" id="botoncito">un botón que hace algo</button>
     </main>
-    <!-- Modal 1 -->
-    <!-- Modal -->
+    <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -215,8 +215,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal 2 -->
-    <!-- Modal -->
+    <!--Modal de ingreso-->
     <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -229,15 +228,15 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label  class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Usuario" onblur="validarUsuario (this)" required>
+                                <label class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="user1" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label  class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
+                                <label class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
                                 </div>
@@ -250,7 +249,7 @@
                                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">Ingresar</button>
+                            <button type="submit" class="btn btn-success" id="btnAdmin">Ingresar</button>
                         </form>
                         <hr class="hrs">
                         <div><a class="hobmodales text-light" href="#" data-bs-toggle="modal" data-bs-target="#registromodal" data-bs-dismiss="modal">¡Registrate!</a></div>
@@ -271,9 +270,7 @@
             </div>
         </div>
     </div>
-    <!-- Fin de modal -->
-    <!-- Modal 3 -->
-    <!-- Modal -->
+    <!--Modal de recuperar contraseña-->
     <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -286,7 +283,9 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <div><p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p></div>
+                                <div>
+                                    <p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p>
+                                </div>
                                 <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un mail válido.
@@ -345,6 +344,7 @@
     <script src="js/contacto.js"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/particles.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

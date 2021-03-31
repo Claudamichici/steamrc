@@ -55,6 +55,10 @@ textarea {
     background-color: #0a141d;
 }
 
+.bg-search{
+    background-color: rgba(31, 39, 51, 0.5);
+}
+
 .bo-destacado {
     border-radius: 75%;
 }

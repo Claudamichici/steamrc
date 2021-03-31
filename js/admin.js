@@ -90,8 +90,8 @@ function dibujarTabla (_listaJuegos){
         </td>
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
-            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
-            <button class="btn btn-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
         </td>
     </tr>`;
 
@@ -107,8 +107,8 @@ function dibujarTabla (_listaJuegos){
         </td>
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
-            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
-            <button class="btn btn-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
         </td>
     </tr>`;
     tablaJuegos.innerHTML += filaJuegos;
@@ -123,8 +123,8 @@ function dibujarTabla (_listaJuegos){
         </td>
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
-            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
-            <button class="btn btn-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
         </td>
     </tr>`;
     tablaJuegos.innerHTML += filaJuegos;
@@ -139,8 +139,8 @@ function dibujarTabla (_listaJuegos){
         </td>
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
-            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
-            <button class="btn btn-primary" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
         </td>
     </tr>`;
     tablaJuegos.innerHTML += filaJuegos;

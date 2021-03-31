@@ -66,7 +66,6 @@ const limpiarFormulario = () => {
 function leerDatos() {
     if (localStorage.length > 0) {
         let _listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
-        console.log(_listaJuegos)
         if (listaJuegos.length === 0) {
             listaJuegos = _listaJuegos;
         }
@@ -78,20 +77,73 @@ function dibujarTabla(_listaJuegos) {
     let tablaJuegos = document.getElementById('tablaJuegos');
     let filaJuegos = '';
     tablaJuegos.innerHTML = '';
-    for (let i in _listaJuegos) {
+    for (let i in _listaJuegos){
+        if(_listaJuegos[i].publicado == false && _listaJuegos[i].destacado == false){
         filaJuegos = `<tr class="text-light">
         <th scope="row">${_listaJuegos[i].codigo}</th>
         <td>${_listaJuegos[i].nombreDeJuego}</td>
         <td>${_listaJuegos[i].categoria}</td>
         <td>${_listaJuegos[i].descripcion}</td>
-        <td><input type="checkbox" class="buttonCheckbox"></td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)">
+        </td>
         <td>
             <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
-            <button class="btn btn-danger" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
         </td>
     </tr>`;
 
         tablaJuegos.innerHTML += filaJuegos;
+        }else if(_listaJuegos[i].publicado == true && _listaJuegos[i].destacado == false){
+            filaJuegos = `<tr class="text-light">
+        <th scope="row">${_listaJuegos[i].codigo}</th>
+        <td>${_listaJuegos[i].nombreDeJuego}</td>
+        <td>${_listaJuegos[i].categoria}</td>
+        <td>${_listaJuegos[i].descripcion}</td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)" checked>
+        </td>
+        <td>
+            <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
+        </td>
+    </tr>`;
+    tablaJuegos.innerHTML += filaJuegos;
+        }else if(_listaJuegos[i].publicado == false && _listaJuegos[i].destacado == true){
+            filaJuegos = `<tr class="text-light">
+        <th scope="row">${_listaJuegos[i].codigo}</th>
+        <td>${_listaJuegos[i].nombreDeJuego}</td>
+        <td>${_listaJuegos[i].categoria}</td>
+        <td>${_listaJuegos[i].descripcion}</td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)">
+        </td>
+        <td>
+            <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
+        </td>
+    </tr>`;
+    tablaJuegos.innerHTML += filaJuegos;
+        }else if(_listaJuegos[i].publicado == true && _listaJuegos[i].destacado == true){
+            filaJuegos = `<tr class="text-light">
+        <th scope="row">${_listaJuegos[i].codigo}</th>
+        <td>${_listaJuegos[i].nombreDeJuego}</td>
+        <td>${_listaJuegos[i].categoria}</td>
+        <td>${_listaJuegos[i].descripcion}</td>
+        <td>
+        <input type="checkbox" class="buttonCheckbox" id="${_listaJuegos[i].codigo}" onchange="publicar(this.id)" checked>
+        </td>
+        <td>
+            <button class="btn btn-warning my-2" onclick='prepararJuegos(this)' id='${_listaJuegos[i].codigo}'>Editar</button>
+            <button class="btn btn-danger my-2" onclick='eliminarJuego(this)' id='${_listaJuegos[i].codigo}'>Borrar</button>
+            <button class="btn btn-primary my-2" onclick="destacarItem(${_listaJuegos[i].codigo})"><i class="far fa-star fa-1x"></i></button>
+        </td>
+    </tr>`;
+    tablaJuegos.innerHTML += filaJuegos;
+        }
     }
 
 }
@@ -174,3 +226,42 @@ function modificarJuegoExistente() {
     modalJuegos.hide();
     leerDatos();
 }
+
+window.publicar = function (id){
+    let check = document.getElementById(`${id}`);
+    if (check.checked){
+        for (let i in listaJuegos){
+            if(listaJuegos[i].codigo == id){
+                listaJuegos[i].publicado = true;
+            }
+        }
+        localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+    }else{
+        for (let i in listaJuegos){
+            if(listaJuegos[i].codigo == id){
+                listaJuegos[i].publicado = false;
+            }
+        }
+        localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+    }
+};
+
+window.destacarItem = function (codigo){
+    for (let i in listaJuegos){
+        if(listaJuegos[i].codigo == codigo){
+            if(listaJuegos[i].destacado == false){
+                listaJuegos[i].destacado = true;
+                for(let i in listaJuegos){
+                    if(listaJuegos[i].codigo != codigo){
+                        listaJuegos[i].destacado = false;
+                    }
+                }
+                localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+            }else{
+                listaJuegos[i].destacado = false;
+                localStorage.setItem("listaJuegosKey", JSON.stringify(listaJuegos));
+            }
+        }
+    }
+    leerDatos();
+};

@@ -223,6 +223,9 @@ textarea {
     .intro {
         height: 800px;
     }
+    .game{
+        min-width: 34% !important ;
+    }
 }
 
 @media (max-width: 769px) {
@@ -239,12 +242,18 @@ textarea {
     .intro {
         height: 620px;
     }
+    .game{
+        min-width: 50% !important ;
+    }
 }
 
 @media (max-width: 520px) {
     .plataformaCompra {
         margin-left: 5%;
         font-size: 70%;
+    }
+    .game{
+        min-width: 100% !important ;
     }
 }
 

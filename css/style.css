@@ -287,21 +287,6 @@ textarea {
     vertical-align: top;
 }
 
-.listaFondo {
-    background: rgb(227, 234, 239);
-    background: linear-gradient(142deg, rgba(227, 234, 239, 1) 0%, rgba(114, 131, 154, 1) 100%);
-    font-size: 80%;
-    position: absolute;
-    width: 259px;
-    margin-top: 7px;
-    border-radius: 5px;
-}
-
-.listaResultados {
-    color: black;
-    list-style: none;
-}
-
 
 /* ====> Por buenas prácticas, la estructura debe dejar a las media queries al final de la hoja <====
    ====>            Por favor agregar arríba cualquier regla de CSS que se necesite             <==== */
@@ -366,9 +351,6 @@ textarea {
     .intro {
         height: 620px;
     }
-    .listaFondo {
-        width: 226px;
-    }
     .game {
         min-width: 50%!important;
     }
@@ -377,10 +359,6 @@ textarea {
 @media (max-width: 520px) {
     .plataformaCompra {
         margin-left: 5%;
-        font-size: 70%;
-    }
-    .listaFondo {
-        width: 160px;
         font-size: 70%;
     }
     .game {

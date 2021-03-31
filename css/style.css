@@ -3,14 +3,14 @@
     font-family: 'Quattrocento Sans', sans-serif;
 }
 
-.fondo{
+.fondo {
     background-image: url("/img/City17.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
-main{
+main {
     min-height: 100vh;
 }
 
@@ -33,16 +33,15 @@ footer {
     background: #171a21;
 }
 
-textarea{
+textarea {
     resize: none;
 }
 
-#particles-js
-{
-	height: 100%;
-	position: absolute;
-	top: 0;
-	width: 100vw;
+#particles-js {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100vw;
     z-index: -1;
 }
 
@@ -150,19 +149,16 @@ textarea{
     background: linear-gradient(90deg, rgba(34, 34, 34, 0.5410539215686274) 0%, rgba(31, 31, 31, 1) 35%, rgba(22, 22, 22, 1) 100%);
 }
 
-.persona
-{
+.persona {
     margin: 40px;
 }
 
-.persona:nth-child(odd)
-{
+.persona:nth-child(odd) {
     background-color: #00DBDE;
     background-image: linear-gradient(90deg, #00DBDE 0%, #171a21 73%);
 }
 
-.persona:nth-child(even)
-{
+.persona:nth-child(even) {
     background-color: #171a21;
     background-image: linear-gradient(90deg, #171a21 28%, #00DBDE 73%);
 }
@@ -178,20 +174,12 @@ textarea{
 
 .intro {
     background-color: #0a141d;
-<<<<<<< HEAD
-    height: 440px;
-=======
     height: 100%;
->>>>>>> bd26e4e6ee7a1b51810fb1f0d7755819b11903ea
 }
 
 .contenedor404 {
     background: rgb(0, 0, 0);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.6951914554884453) 0%, rgba(0, 0, 0, 0.8436508392419468) 76%);
-}
-
-.gordon {
-    position: relative;
 }
 
 @media (max-width: 1400px) and (min-width: 1200px) {
@@ -207,19 +195,16 @@ textarea{
     .intro {
         height: 540px;
     }
-
 }
 
-@media screen and (max-width: 1024px){
-    .persona:nth-child(even){
+@media screen and (max-width: 1024px) {
+    .persona:nth-child(even) {
         background-image: linear-gradient(to bottom, #171a21 28%, #00DBDE 73%);
-    }   
-    
-    .persona:nth-child(odd){
+    }
+    .persona:nth-child(odd) {
         background-image: linear-gradient(to top, #00DBDE 0%, #171a21 73%);
-    }   
-    
-    .persona img{
+    }
+    .persona img {
         object-fit: cover;
     }
 }
@@ -263,11 +248,101 @@ textarea{
     }
 }
 
-.buttonCheckbox{
+.buttonCheckbox {
     transform: scale(2.0);
     margin-left: 30px;
     margin-top: 10px;
 }
-.buttonCheckboxModal{
+
+.buttonCheckboxModal {
     transform: scale(1.5);
+}
+
+/* Controles del carusel */
+.titulo-controles{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.titulo-controles .indicadores button,
+.titulo-controles .indicadores1 button{
+    background:white;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.titulo-controles .indicadores button:hover ,
+.titulo-controles .indicadores button.active,
+.titulo-controles .indicadores1 button:hover ,
+.titulo-controles .indicadores1 button.active{
+    background:green;
+}
+
+/* Contenedor principal y flechas del carusel */
+.categoria-carusel{
+    margin-bottom: 30px;
+}
+
+.categoria-carusel .contenedor {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.categoria-carusel .contenedor .flecha-izquierda,
+.categoria-carusel .contenedor .flecha-derecha{
+    border: none;
+    background: rgba(0,0,0,0.3);
+    font-size: 45px;
+    height: 35%;
+    line-height: 40px;
+    width: 50px;
+    color: white;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.categoria-carusel .contenedor .flecha-izquierda:hover ,
+.categoria-carusel .contenedor .flecha-derecha:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+/* Contenedor del carusel , imagenes */
+
+.categoria-carusel .contenedor-carusel{
+    width: 100%;
+    padding: 20px 0px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.categoria-carusel .contenedor-carusel .carusel{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.categoria-carusel .contenedor-carusel .carusel .game{
+    min-width: 25%; 
+    transition: .3s ease all; 
+    box-shadow: 5px 5px 10px rgba(0,0,0,.3);
+}
+
+/* Cambiar con media cuery para que cuando se haga la pagina mas chicas muestre menos img 
+.categoria-carusel .contenedor-carusel .carusel .game{
+        min-width: X%; 
+    }
+*/
+
+.categoria-carusel .contenedor-carusel .carusel .game .hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.categoria-carusel .contenedor-carusel .carusel .game img {
+    width: 100%; 
+    vertical-align: top;
 }

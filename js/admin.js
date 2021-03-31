@@ -16,7 +16,7 @@ btnAgregar.addEventListener("click", () => {
 
 leerDatos();
 
- function agregarJuego() {
+function agregarJuego() {
     let codigo = document.getElementById("codigo").value;
     let nombre = document.getElementById("nombreDeJuego").value;
     let categoria = document.getElementById("categoria").value;
@@ -63,18 +63,17 @@ const limpiarFormulario = () => {
     modificarJuego = false;
 }
 
-function leerDatos () {
-    if(localStorage.length > 0){
+function leerDatos() {
+    if (localStorage.length > 0) {
         let _listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey'));
-        console.log(_listaJuegos)
-        if(listaJuegos.length === 0){
+        if (listaJuegos.length === 0) {
             listaJuegos = _listaJuegos;
         }
         dibujarTabla(_listaJuegos);
     }
 }
 
-function dibujarTabla (_listaJuegos){
+function dibujarTabla(_listaJuegos) {
     let tablaJuegos = document.getElementById('tablaJuegos');
     let filaJuegos = '';
     tablaJuegos.innerHTML = '';
@@ -159,19 +158,19 @@ window.eliminarJuego = function(boton) {
         cancelButtonColor: '#d33',
         confirmButtonText: 'Si',
         cancelButtonText: 'Cancelar',
-      }).then((result) => {
+    }).then((result) => {
         if (result.isConfirmed) {
             let juegosFiltrados = listaJuegos.filter(producto => producto.codigo != boton.id)
             listaJuegos = juegosFiltrados;
             localStorage.setItem('listaJuegosKey', JSON.stringify(listaJuegos))
             leerDatos();
-          Swal.fire(
-            'Listo!',
-            'El juego fue eliminado.',
-            'success'
-          )
+            Swal.fire(
+                'Listo!',
+                'El juego fue eliminado.',
+                'success'
+            )
         }
-      })
+    })
 }
 
 window.prepararJuegos = function(boton) {
@@ -186,13 +185,13 @@ window.prepararJuegos = function(boton) {
     document.getElementById('url').value = juegoEncontrado.url;
     modificarJuego = true;
     modalJuegos.show();
-}   
+}
 
-window.guardarDatos = function(event){
+window.guardarDatos = function(event) {
     event.preventDefault();
-    if(modificarJuego){
+    if (modificarJuego) {
         modificarJuegoExistente();
-    }else{
+    } else {
         agregarJuego();
     }
 }
@@ -206,16 +205,16 @@ function modificarJuegoExistente() {
     let imagen2 = document.getElementById('imagen2').value;
     let precio = document.getElementById('precio').value;
     let url = document.getElementById('url').value;
-    
-    for (let i in listaJuegos){
-        if(listaJuegos[i].codigo === codigo){
-           listaJuegos[i].nombreDeJuego = nombre;
-           listaJuegos[i].categoria = categoria;
-           listaJuegos[i].descripcion = descripcion;
-           listaJuegos[i].imagen1 = imagen1;
-           listaJuegos[i].imagen2 = imagen2;
-           listaJuegos[i].precio = precio;
-           listaJuegos[i].url = url;
+
+    for (let i in listaJuegos) {
+        if (listaJuegos[i].codigo === codigo) {
+            listaJuegos[i].nombreDeJuego = nombre;
+            listaJuegos[i].categoria = categoria;
+            listaJuegos[i].descripcion = descripcion;
+            listaJuegos[i].imagen1 = imagen1;
+            listaJuegos[i].imagen2 = imagen2;
+            listaJuegos[i].precio = precio;
+            listaJuegos[i].url = url;
         };
     }
     localStorage.setItem('listaJuegosKey', JSON.stringify(listaJuegos));
@@ -230,7 +229,6 @@ function modificarJuegoExistente() {
 
 window.publicar = function (id){
     let check = document.getElementById(`${id}`);
-    console.log(check);
     if (check.checked){
         for (let i in listaJuegos){
             if(listaJuegos[i].codigo == id){

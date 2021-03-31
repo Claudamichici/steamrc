@@ -8,6 +8,12 @@ window.login = function (event){
         console.log("login correcto");
         location.href = "admin.html";
         localStorage.setItem("userKey", JSON.stringify("administrador"));
+    }else{
+        Swal.fire(
+            "¡Inicio de Sesion Incorrecto!",
+            "El usuario ingresado o la contraseña son incorrectos.",
+            "warning"
+          );
     }
 
 }
@@ -15,5 +21,5 @@ window.login = function (event){
 window.cerrarSesion = function (){
     let user = "";
     localStorage.setItem("userKey", JSON.stringify(user));
-    location.href ="index.html"
+    location.href ="index.html";
 }

@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://kit.fontawesome.com/98b26e2579.js" crossorigin="anonymous"></script>
     <title>Página no encontrada 404</title>
 </head>
@@ -42,12 +43,12 @@
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#modalRegistro" class="btn btn-light my-2" data-bs-toggle="modal" data-bs-target="#registromodal"><i class="far fa-bell fa-x"></i>
+                            <a class="nav-link" id="modalRegistro" href="#modalRegistro" class="btn btn-light my-2" data-bs-toggle="modal" data-bs-target="#registromodal"><i class="far fa-bell fa-x"></i>
                                 <div>Registro</div>
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#modalIngresar" data-bs-toggle="modal" data-bs-target="#loginmodal"><i class="fas fa-sign-in-alt fa-x"></i>
+                            <a class="nav-link" id="modalIngresar" href="#modalIngresar" data-bs-toggle="modal" data-bs-target="#loginmodal"><i class="fas fa-sign-in-alt fa-x"></i>
                                 <div>Ingresar</div>
                             </a>
                         </li>
@@ -66,9 +67,10 @@
             </div>
         </nav>
     </header>
-    <main class="fondo d-flex align-items-center justify-content-center">
-        <section >
-            <article >
+    <!--Se sugiere no agregar la clase d-flex al main ya que ocasiona problemas de carácter responsive en diferentes resoluciones-->
+    <main class="fondo align-items-center justify-content-center">
+        <section>
+            <article>
                 <div class="container contenedor404 text-light d-flex">
                     <div class="mt-5 ms-auto">
                         <h1 class="display-1">ERROR 404</h1>
@@ -76,13 +78,12 @@
                         <p class="mt-3">Vamos a seguir trabajando duro para que la próxima vez encuentres lo que estás buscando.</p>
                         <img class="mt-3" src="img/footerLogo_valve_new.png">
                     </div>
-                    <img class="gordon ms-auto" src="img/GordonFreeman.png">
+                    <img class="ms-auto" src="img/GordonFreeman.png">
                 </div>
             </article>
         </section>
     </main>
-    <!-- Modal 1 -->
-    <!-- Modal -->
+    <!--Modal de registro-->
     <div class="modal fade" id="registromodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -141,8 +142,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal 2 -->
-    <!-- Modal -->
+    <!--Modal de ingreso-->
     <div class="modal fade" id="loginmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -176,7 +176,7 @@
                                                     </label>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success">Ingresar</button>
+                            <button type="submit" class="btn btn-success" id="btnAdmin">Ingresar</button>
                         </form>
                         <hr class="hrs">
                         <div><a class="hobmodales text-light" href="#" data-bs-toggle="modal" data-bs-target="#registromodal" data-bs-dismiss="modal">¡Registrate!</a></div>
@@ -197,9 +197,7 @@
             </div>
         </div>
     </div>
-    <!-- Fin de modal -->
-    <!-- Modal 3 -->
-    <!-- Modal -->
+    <!--Modal de recuperar contraseña-->
     <div class="modal fade" id="recuperar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content bg-modal p-4">
@@ -212,7 +210,9 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <div><p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p></div>
+                                <div>
+                                    <p class="text-light">Porfavor ingresar su email para que enviemos a su correo los pasos para recuperar su contraseña</p>
+                                </div>
                                 <input type="email" placeholder="Correo@ejemplo.com" class="form-control" id="email" onblur="validarEmail(this)" required>
                                 <div class="invalid-feedback">
                                     Debe ingresar un mail válido.

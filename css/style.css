@@ -182,6 +182,130 @@ textarea {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.6951914554884453) 0%, rgba(0, 0, 0, 0.8436508392419468) 76%);
 }
 
+.buttonCheckbox {
+    transform: scale(2.0);
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.buttonCheckboxModal {
+    transform: scale(1.5);
+}
+
+
+/* Controles del carusel */
+
+.titulo-controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.titulo-controles .indicadores button,
+.titulo-controles .indicadores1 button {
+    background: white;
+    height: 3px;
+    width: 10px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+}
+
+.titulo-controles .indicadores button:hover,
+.titulo-controles .indicadores button.active,
+.titulo-controles .indicadores1 button:hover,
+.titulo-controles .indicadores1 button.active {
+    background: green;
+}
+
+
+/* Contenedor principal y flechas del carusel */
+
+.categoria-carusel {
+    margin-bottom: 30px;
+}
+
+.categoria-carusel .contenedor {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.categoria-carusel .contenedor .flecha-izquierda,
+.categoria-carusel .contenedor .flecha-derecha {
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 45px;
+    height: 35%;
+    line-height: 40px;
+    width: 50px;
+    color: white;
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.categoria-carusel .contenedor .flecha-izquierda:hover,
+.categoria-carusel .contenedor .flecha-derecha:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+/* Contenedor del carusel , imagenes */
+
+.categoria-carusel .contenedor-carusel {
+    width: 100%;
+    padding: 20px 0px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.categoria-carusel .contenedor-carusel .carusel {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.categoria-carusel .contenedor-carusel .carusel .game {
+    min-width: 25%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+
+/* Cambiar con media cuery para que cuando se haga la pagina mas chicas muestre menos img 
+.categoria-carusel .contenedor-carusel .carusel .game{
+        min-width: X%; 
+    }
+*/
+
+.categoria-carusel .contenedor-carusel .carusel .game .hover {
+    transform: scale(1.2);
+    transform-origin: center;
+}
+
+.categoria-carusel .contenedor-carusel .carusel .game img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.listaFondo {
+    background: rgb(227, 234, 239);
+    background: linear-gradient(142deg, rgba(227, 234, 239, 1) 0%, rgba(114, 131, 154, 1) 100%);
+    font-size: 80%;
+    position: absolute;
+    width: 259px;
+    margin-top: 7px;
+    border-radius: 5px;
+}
+
+.listaResultados {
+    color: black;
+    list-style: none;
+}
+
+
+/* ====> Por buenas prácticas, la estructura debe dejar a las media queries al final de la hoja <====
+   ====>            Por favor agregar arríba cualquier regla de CSS que se necesite             <==== */
+
 @media (max-width: 1400px) and (min-width: 1200px) {
     .plataformaCompra {
         margin-left: 65%;
@@ -239,6 +363,9 @@ textarea {
     .intro {
         height: 620px;
     }
+    .listaFondo {
+        width: 226px;
+    }
 }
 
 @media (max-width: 520px) {
@@ -246,103 +373,8 @@ textarea {
         margin-left: 5%;
         font-size: 70%;
     }
-}
-
-.buttonCheckbox {
-    transform: scale(2.0);
-    margin-left: 30px;
-    margin-top: 10px;
-}
-
-.buttonCheckboxModal {
-    transform: scale(1.5);
-}
-
-/* Controles del carusel */
-.titulo-controles{
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-}
-
-.titulo-controles .indicadores button,
-.titulo-controles .indicadores1 button{
-    background:white;
-    height: 3px;
-    width: 10px;
-    cursor: pointer;
-    border: none;
-    margin-right: 2px;
-}
-
-.titulo-controles .indicadores button:hover ,
-.titulo-controles .indicadores button.active,
-.titulo-controles .indicadores1 button:hover ,
-.titulo-controles .indicadores1 button.active{
-    background:green;
-}
-
-/* Contenedor principal y flechas del carusel */
-.categoria-carusel{
-    margin-bottom: 30px;
-}
-
-.categoria-carusel .contenedor {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.categoria-carusel .contenedor .flecha-izquierda,
-.categoria-carusel .contenedor .flecha-derecha{
-    border: none;
-    background: rgba(0,0,0,0.3);
-    font-size: 45px;
-    height: 35%;
-    line-height: 40px;
-    width: 50px;
-    color: white;
-    cursor: pointer;
-    transition: .2s ease all;
-}
-
-.categoria-carusel .contenedor .flecha-izquierda:hover ,
-.categoria-carusel .contenedor .flecha-derecha:hover {
-    background: rgba(0,0,0,0.9);
-}
-
-/* Contenedor del carusel , imagenes */
-
-.categoria-carusel .contenedor-carusel{
-    width: 100%;
-    padding: 20px 0px;
-    overflow: hidden;
-    scroll-behavior: smooth;
-}
-
-.categoria-carusel .contenedor-carusel .carusel{
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.categoria-carusel .contenedor-carusel .carusel .game{
-    min-width: 25%; 
-    transition: .3s ease all; 
-    box-shadow: 5px 5px 10px rgba(0,0,0,.3);
-}
-
-/* Cambiar con media cuery para que cuando se haga la pagina mas chicas muestre menos img 
-.categoria-carusel .contenedor-carusel .carusel .game{
-        min-width: X%; 
+    .listaFondo {
+        width: 160px;
+        font-size: 70%;
     }
-*/
-
-.categoria-carusel .contenedor-carusel .carusel .game .hover {
-    transform: scale(1.2);
-    transform-origin: center;
-}
-
-.categoria-carusel .contenedor-carusel .carusel .game img {
-    width: 100%; 
-    vertical-align: top;
 }

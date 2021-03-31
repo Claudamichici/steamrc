@@ -102,41 +102,85 @@
             </section>
             <!-- Carousel 1 de juegos -->
             <section class="container">
-                <div class="py-3">
-                    <h4 class="text-center text-light">Carreras</h4>
-                </div>
                 <article class="row">
-                    <div class="d-flex justify-content-evenly" id="manejo">
+                    <!--id="manejo"-->
+                    <div class="categoria-carusel py-3">
+                        <div class="titulo-controles">
+                            <h3 class="text-center text-light">Manejo</h3>
+                            <div class="indicadores" id="indicadores">
+                            </div>
+                        </div>
+                        <div class="contenedor">
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel')"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel" id="contenedor-carusel">
+                                <div class="carusel" id="manejo">
+                                </div>
+                            </div>
+                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel')"><i class="fas fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </section>
             <!-- Carousel 2 de juegos -->
             <section class="container">
-                <div class="py-3">
-                    <h4 class="text-center text-light">Acción</h4>
-                </div>
                 <article class="row">
-                    <div class="d-flex justify-content-evenly" id="disparos">
+                    <!-- id="disparos" -->
+                    <div class="categoria-carusel py-3">
+                        <div class="titulo-controles">
+                            <h3 class="text-center text-light">Disparos</h3>
+                            <div class="indicadores1" id="indicadores1">
+                            </div>
+                        </div>
+                        <div class="contenedor">
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel1')"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel" id="contenedor-carusel1">
+                                <div class="carusel" id="disparos">
+                                </div>
+                            </div>
+                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel1')"><i class="fas fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </section>
             <!-- Carousel 3 de juegos -->
             <section>
-                <div class="py-3">
-                    <h4 class="text-center text-light">Historia</h4>
-                </div>
                 <article class="row">
-                    <div class="d-flex justify-content-evenly" id="historia">
+                    <!-- id="historia" -->
+                    <div class="categoria-carusel py-3">
+                        <div class="titulo-controles">
+                            <h3 class="text-center text-light">Historia</h3>
+                            <div class="indicadores1" id="indicadores1">
+                            </div>
+                        </div>
+                        <div class="contenedor">
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel2')"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel" id="contenedor-carusel2">
+                                <div class="carusel" id="historia">
+                                </div>
+                            </div>
+                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel2')"><i class="fas fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </section>
             <!-- Carousel 4 de juegos -->
             <section>
-                <div class="py-3">
-                    <h4 class="text-center text-light">Deportes</h4>
-                </div>
                 <article class="row">
-                    <div class="d-flex justify-content-evenly" id="deportes">
+                    <!-- id="deportes" -->
+                    <div class="categoria-carusel py-3">
+                        <div class="titulo-controles">
+                            <h3 class="text-center text-light">Deportes</h3>
+                            <div class="indicadores1" id="indicadores1">
+                            </div>
+                        </div>
+                        <div class="contenedor">
+                            <button role="button" class="flecha-izquierda" onclick="flechaizquierda('contenedor-carusel3')"><i class="fas fa-angle-left"></i></button>
+                            <div class="contenedor-carusel" id="contenedor-carusel3">
+                                <div class="carusel" id="deportes">
+                                </div>
+                            </div>
+                            <button role="button" class="flecha-derecha" onclick="flechaderecha('contenedor-carusel3')"><i class="fas fa-angle-right"></i></button>
+                        </div>
                     </div>
                 </article>
             </section>
@@ -332,6 +376,7 @@
     <script src="js/app.js"></script>
     <script src="js/contacto.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/carrusel.js"></script>
 </body>
 
 </html>

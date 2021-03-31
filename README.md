@@ -20,6 +20,8 @@ _Se agregaron las siguientes librerias al proyecto:_
 1. [Fontawesome](https://fontawesome.com/)
 1. [Sweetalert2](https://sweetalert2.github.io/)
 
+1. [Particles.js](https://codepen.io/VincentGarreau/pen/pnlso)
+
 ## 🧑👩 Autores 🧒👱‍♂️
 - Alderete Nicolas Emanuel
 - D'Amichici Claudia Andrea

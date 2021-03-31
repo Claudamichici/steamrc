@@ -347,6 +347,9 @@ textarea {
     .intro {
         height: 800px;
     }
+    .game {
+        min-width: 34% !important;
+    }
 }
 
 @media (max-width: 769px) {
@@ -366,6 +369,9 @@ textarea {
     .listaFondo {
         width: 226px;
     }
+    .game {
+        min-width: 50%!important;
+    }
 }
 
 @media (max-width: 520px) {
@@ -376,5 +382,8 @@ textarea {
     .listaFondo {
         width: 160px;
         font-size: 70%;
+    }
+    .game {
+        min-width: 100% !important;
     }
 }

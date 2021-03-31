@@ -42,18 +42,23 @@
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#modalRegistro" class="btn btn-light my-2" data-bs-toggle="modal" data-bs-target="#registromodal"><i class="far fa-bell fa-x"></i>
+                            <a class="nav-link" id="modalRegistro" href="#modalRegistro" class="btn btn-light my-2" data-bs-toggle="modal" data-bs-target="#registromodal"><i class="far fa-bell fa-x"></i>
                                 <div>Registro</div>
                             </a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href="#modalIngresar" data-bs-toggle="modal" data-bs-target="#loginmodal"><i class="fas fa-sign-in-alt fa-x"></i>
+                            <a class="nav-link" id="modalIngresar" href="#modalIngresar" data-bs-toggle="modal" data-bs-target="#loginmodal"><i class="fas fa-sign-in-alt fa-x"></i>
                                 <div>Ingresar</div>
                             </a>
                         </li>
-                        <li class="nav-item mx-2 d-none">
-                            <a class="nav-link active" href="admin.html"><i class="fas fa-user-shield fa-x"></i>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active d-none" href="admin.html" id="adminNavbar"><i class="fas fa-user-shield fa-x"></i>
                                 <div>Administración</div>
+                            </a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link d-none" href="index.html" onclick="cerrarSesion()" id="cerrarSesion"><i class="fas fa-times fa-x"></i>
+                                <div>Cerrar Sesion</div>
                             </a>
                         </li>
                     </ul>
@@ -240,25 +245,17 @@
                     <div class="modal-body text-light">
                         <form class="px-4 py-3">
                             <div class="mb-3">
-                                <label class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="user1" placeholder="Usuario" onblur="validarUsuario (this)" required>
+                                <label  class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="user" placeholder="Usuario" onblur="validarUsuario (this)" required>
                                 <div class="invalid-feedback">
                                     Usuario incorrecto!.
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="password1" placeholder="Contraseña " onblur="validarContraseña(this)" required>
+                                <label  class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="Contraseña " onblur="validarContraseña(this)" required>
                                 <div class="invalid-feedback">
                                     Contraseña incorrecta!.
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="...">
-                                    <label class="form-check-label" for="dropdownCheck">
-                                                    Recuerdame.
-                                                    </label>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-success" id="btnAdmin">Ingresar</button>
@@ -326,10 +323,10 @@
         <section class="row align-items-center text-center">
             <article class="col-sm-12 col-md-4">
                 <ul class="lista">
-                    <li><a href="#" class="text-light">Inicio</a></li>
-                    <li><a href="#" class="text-light">Acerca de Nosotros</a></li>
-                    <li><a href="#" class="text-light">Contacto</a></li>
-                    <li><a href="#" class="text-light">Suscribirse</a></li>
+                    <li><a href="index.html" class="text-light">Inicio</a></li>
+                    <li><a href="nosotros.html" class="text-light">Acerca de Nosotros</a></li>
+                    <li><a href="contacto.html" class="text-light">Contacto</a></li>
+                    <li><a href="#modalRegistro" data-bs-toggle="modal" data-bs-target="#loginmodal" class="text-light">Registrarse</a></li>
                 </ul>
             </article>
             <article class="col-sm-12 col-md-4 align-items-center text-light">
@@ -353,6 +350,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script type="module" src="js/admin.js"></script>
     <script src="js/contacto.js"></script>
+    <script src="login.js"></script>
+    <script src="js/verificador.js"></script>
 </body>
 
 </html>

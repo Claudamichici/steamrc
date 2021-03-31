@@ -300,7 +300,7 @@ window.cargarInfo = function (){
         "Gran Turismo 7.jpg",
         "Gran Turismo 702.jpg",
         "1400",
-        "https://www.youtube.com/embed/O74SmTSQ"
+        "https://www.youtube.com/embed/ecUQE-sDUtk"
     );
     info.push(juego3);
 
@@ -333,8 +333,8 @@ window.cargarInfo = function (){
         "EA SPORTS™ FIFA 21",
         "Deportes",
         "El fútbol vuelve con EA SPORTS™ FIFA 21, que incluye más formas de jugar en equipo, tanto en la calle como en el estadio, para que disfrutes de mayores victorias con tus amigos.",
-        "EASPORTSFIFA 21.png",
-        "EASPORTSFIFA 2102.png",
+        "EASPORTSFIFA_21.png",
+        "EASPORTSFIFA_2102.png",
         "3600",
         "https://www.youtube.com/embed/onJKuQYugGo"
     );
